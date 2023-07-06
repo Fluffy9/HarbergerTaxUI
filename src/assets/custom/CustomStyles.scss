@@ -1,0 +1,35 @@
+// The background color of the body
+$body-bg: #28032e;
+
+// $light: #cbcbcb;
+// $dark: #343b63ff;//#1f1c1d;
+// $primary: #bfe1f2;//#e7b8c1;
+// $secondary: #fbbcd4;
+// $success: #c3d77e;
+// $warning: #fae68f;
+h1 {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5 {
+  color: white;
+}
+
+
+.section {
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+}
+
+#Section2 {
+    background-color: rgb(40, 40, 40);
+}
+
+#Section4 {
+    background-color: rgb(40, 40, 40);
+}
+
+#Footer {
+    background-color: rgb(17, 18, 36);
+}

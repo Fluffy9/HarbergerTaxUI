@@ -1,0 +1,20 @@
+{
+    "config": [
+        {
+            "Name": "What is Partial Common Ownership",
+            "Section": 1,
+            "External": ""
+        },
+        {
+            "Name": "Use Cases",
+            "Section": 2,
+            "External": ""
+
+        },
+        {
+            "Name": "Donations",
+            "External": "",
+            "Section": 3
+        }
+    ]
+}

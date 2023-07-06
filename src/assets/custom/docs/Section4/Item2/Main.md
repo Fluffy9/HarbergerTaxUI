@@ -1,0 +1,1 @@
+While Investors made some profit by buying up land early, you managed to replace them with productive innovators.

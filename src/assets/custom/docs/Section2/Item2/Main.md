@@ -1,0 +1,1 @@
+Those early investors made a profit without adding any value to society. Ouch!
