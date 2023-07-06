@@ -1,5 +1,5 @@
 ## Instructions
-1. Copy the custom folder from here into the root directory (same level as the Dockerfile)
+1. Copy the assets inside the folder from ./src/assets/custom into this directory
 
 2. Make any changes you want to this copied custom folder to see them reflected on the website
 
