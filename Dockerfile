@@ -17,7 +17,6 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-COPY ./custom ./src/assets/custom
 
 EXPOSE 8080
-ENTRYPOINT ["/bin/sh", "-c" , "npm run build && http-server dist"]
+ENTRYPOINT ["/bin/sh", "-c" , "cp ./custom ./src/assets/custom && npm run build && http-server dist"]
