@@ -1,19 +1,15 @@
-# app
+# Installation
 
-## Project setup
-```
-npm install
-```
+1. Make sure you have docker installed
+2. Run `docker run -it --rm -p 8080:8080 --pull=always -v ${pwd}/custom:/custom ghcr.io/fluffy9/harbergertaxui:master`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+3. You should see your changes available at http://localhost:8080/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Customizing the Documentation (Important!)
+I have left space in the design for modification of the documentation, the header images in the documentation, CSS overrides, menu names/links, and lastly a byline in the footer. To make these modifications, you need to provide a folder that will override the "custom" folder in the code. 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Follow the notes listed here: https://github.com/Fluffy9/HarbergerTaxUI/tree/master/custom
+
+2. Run `docker run -it --rm -p 8080:8080 --pull=always -v ${pwd}/custom:/custom ghcr.io/fluffy9/harbergertaxui:master`
+
+3. You should see your changes available at http://localhost:8080/
