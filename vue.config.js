@@ -4,7 +4,7 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 const webpack = require('webpack');
 
 module.exports = defineConfig({
-	publicPath: '/HarbergerTaxUI/',
+	publicPath: process.env.NODE_ENV === 'production' ? "HarbergerTaxUI" : "/",
 	transpileDependencies: true,
 	configureWebpack: {
 		plugins: [			

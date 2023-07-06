@@ -1,5 +1,6 @@
 From node
 
+ENV NODE_ENV local
 RUN npm install -g http-server
 
 # Create app directory
