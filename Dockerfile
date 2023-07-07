@@ -3,6 +3,7 @@ From node
 ENV NODE_ENV local
 RUN npm install -g http-server
 
+VOLUME [ "/custom" ]
 # Create app directory
 WORKDIR /app
 
@@ -19,4 +20,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-ENTRYPOINT ["/bin/sh", "-c" , ""]
+ENTRYPOINT ["/bin/sh", "-c" , "cp -prnv ./custom/* /app/src/assets/custom/ ; npm run build && http-server dist"]
