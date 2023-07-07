@@ -18,6 +18,7 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+CMD "cp -prnv ./custom/* /app/src/assets/custom/"
 
 EXPOSE 8080
-ENTRYPOINT ["/bin/sh", "-c" , "cp -prnv ./custom/* /app/src/assets/custom/ ; npm run build && http-server dist"]
+ENTRYPOINT ["/bin/sh", "-c" ,  "npm run build && http-server dist"]
