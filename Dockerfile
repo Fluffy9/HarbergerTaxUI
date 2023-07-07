@@ -18,7 +18,7 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-RUN "cp -prnv ./custom/* /app/src/assets/custom/"
+RUN "cp -prnv /custom/* /app/src/assets/custom/"
 
 EXPOSE 8080
 ENTRYPOINT ["/bin/sh", "-c" ,  "npm run build && http-server dist"]
