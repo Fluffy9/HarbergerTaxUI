@@ -1,1 +1,1 @@
-You were unable to replace low-productivity businesses with thriving ones.
+Private Ownership has low allocative efficiency.

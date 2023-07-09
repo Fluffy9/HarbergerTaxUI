@@ -1,1 +1,1 @@
-When the innovators buy and develop land, any additional value created is captured by the innovator and none of that extra value is given back to the community.
+Private Ownership has high investment efficiency. 

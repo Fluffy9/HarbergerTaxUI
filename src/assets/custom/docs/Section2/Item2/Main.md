@@ -1,1 +1,1 @@
-Those early investors made a profit without adding any value to society. Ouch!
+Private Ownership has an investor hoarding problem.

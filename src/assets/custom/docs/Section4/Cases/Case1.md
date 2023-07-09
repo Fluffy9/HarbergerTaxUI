@@ -1,0 +1,1 @@
+You are incentivised to set the price at the true valuation. This is the optimal Tax rate to maximise Allocative welfare.

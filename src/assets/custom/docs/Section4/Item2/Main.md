@@ -1,1 +1,1 @@
-While Investors made some profit by buying up land early, you managed to replace them with productive innovators.
+Harberger Taxes reduces investor hoarding and extreme wealth accumulation.

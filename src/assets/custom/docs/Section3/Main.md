@@ -1,8 +1,9 @@
-First, society OWNS all of the land, and as a citizen you can purchase the rights to use the land (build, produce, fish, harvest), and  ability to exclude others from using it. You are now the Possessor of the land! Yay!
+Governments sell plots of land to raise money and encourage economic growth, which in turn improves the living standards of society as a whole.
 
-So who do I pay?
-You pay the current possessor their self-assessed price.
-You also pay X% to society each year*.
+If you buy a plot of land, you get two main benefits:
+* The right to use the land
+* The right to exclude others from using it
 
-When do I pay?
-All plots of land are always for sale, the current possessor set's their own price.
+The big difference is that all plots of land must always have a for-sale price.
+
+Let's see how this improves the allocation of land and the well-being of everyone.

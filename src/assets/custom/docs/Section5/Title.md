@@ -1,1 +1,1 @@
-# Benefits of Harberger Taxes
+# Use Cases for Partial Common Ownership

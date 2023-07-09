@@ -1,1 +1,1 @@
-### Allocation efficiencies
+### Revenue for Equal Distribution

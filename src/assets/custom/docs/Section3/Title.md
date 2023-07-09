@@ -1,1 +1,1 @@
-# How do I buy land in a Partial Common Ownership system?
+# How does Partial Common Ownership work?

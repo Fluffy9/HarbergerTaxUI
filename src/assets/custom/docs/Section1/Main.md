@@ -7,4 +7,4 @@
     * the right to exclude others from using it
     * The right to sell it when you want
 3. The owner of the land determines when the land can be sold on and the price.
-4. If an owner sells, they are incentivised to set a high price for profit.
+4. If an owner sells, they are incentivize to set a high price for profit.

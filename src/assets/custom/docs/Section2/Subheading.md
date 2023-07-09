@@ -1,1 +1,1 @@
-## The problems with private ownership
+### Pros and Cons

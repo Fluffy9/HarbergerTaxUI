@@ -1,10 +1,8 @@
-## Partial Common Ownership
+In the game, there was a tax that owners paid continually at a rate of 10% per year based on their valuation of their property. This mechanism is called Harberger Taxation.
 
-1. A government sells property rights to plots of land to raise capital.
+Harberger Taxation:
+1. Owners must pay an X% tax based on their self-assessed value.
+2. Owners must sell at their self-assessed value.
 
-2. The new owner of the land has two main things:
-    * the right to use the land
-    * the ability to exclude others from using it
-
-3. The owner of the land determines the for-sale price.
-4. Because of the harberger tax, the owner is incentivised to set a lower price.
+If you must sell at your self-assessed value and the Turnover rate of assets is high, then you could set a higher price.
+It's important you see these two act in opposite directions...

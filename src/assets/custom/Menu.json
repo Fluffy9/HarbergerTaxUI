@@ -1,20 +1,28 @@
 {
     "config": [
         {
-            "Name": "What is Partial Common Ownership",
-            "Section": 1,
-            "External": ""
+            "Name": "Learn",
+            "Subsections": [
+                {"Name": "Lesson 1", "Section": 1},
+                {"Name": "Lesson 2", "Section": 2},
+                {"Name": "Lesson 3", "Section": 3},
+                {"Name": "Lesson 4", "Section": 4},
+                {"Name": "Lesson 5", "Section": 5}
+            ]
         },
         {
             "Name": "Use Cases",
-            "Section": 2,
-            "External": ""
-
+            "Section": 6
         },
         {
-            "Name": "Donations",
-            "External": "",
-            "Section": 3
+            "Name": "FAQs",
+            "Section": 7
+        },
+        {
+            "Name": "Donate",
+            "Section": 8,
+            "External": ""
+
         }
     ]
 }
