@@ -311,18 +311,21 @@
                     </b-col>
                 </b-row>     
                 <div class="accordion" role="tablist">
-                    <b-card no-body class="mb-1" v-for="q, index in FAQs">
-                        <b-card-header header-tag="header" class="p-1" role="tab">
-                            <b-button block :v-b-toggle="`accordion-${index+1}`" variant="primary">
-                                <h3><VueShowdown class="text-center" :markdown="require(`@/assets/custom/docs/Section6/Question${index+1}/Question.md`).default" flavor="github" :options="{ emoji: true }" /></h3>
-                            </b-button>
-                        </b-card-header>
-                        <b-collapse :id="`accordion-${index+1}`" visible accordion="my-accordion" role="tabpanel">
-                            <b-card-body>
-                                <b-card-text><VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section6/Question${index+1}/Answer.md`).default" flavor="github" :options="{ emoji: true }" /></b-card-text>
-                            </b-card-body>
-                        </b-collapse>
-                    </b-card>
+                    <div v-for="q, index in FAQs" :key="`faqs-` + index">
+                        <b-card no-body class="mb-1" >
+                            <b-card-header header-tag="header" class="p-1" role="tab">
+                                <b-button block v-b-toggle="`accordion-${index+1}`" variant="primary">
+                                    <h3><VueShowdown class="text-center" :markdown="require(`@/assets/custom/docs/Section6/Question${index+1}/Question.md`).default" flavor="github" :options="{ emoji: true }" /></h3>
+                                </b-button>
+                            </b-card-header>
+                            <b-collapse :id="`accordion-${index+1}`" :accordion="`accordion-${index+1}`" role="tabpanel">
+                                <b-card-body>
+                                    <b-card-text><VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section6/Question${index+1}/Answer.md`).default" flavor="github" :options="{ emoji: true }" /></b-card-text>
+                                </b-card-body>
+                            </b-collapse>
+                        </b-card>                        
+                    </div>
+
                 </div>
             </div>
         </div>
