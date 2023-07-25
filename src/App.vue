@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="pattern mb-5">
+  <div id="app" class="mb-5">
     <div id="nav">
       <b-navbar toggleable="lg" type="dark" bg-variant="primary" >
         <b-navbar-brand to="/">

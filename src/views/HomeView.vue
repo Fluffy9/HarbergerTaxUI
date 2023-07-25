@@ -1,9 +1,10 @@
 <template>
-    <div>
-        <div id="header" class="container pb-5">
-            <b-jumbotron style="background-color: #050f19; border-radius: 20px; border: solid 5px white; transform: rotate(-2deg);">
+    <div class="overflow-hidden">
+        <div id="header" class="container pb-5 pattern">
+            <b-jumbotron class="mt-4" style="background-color: #050f19; border-radius: 20px; border: solid 5px white; transform: rotate(-2deg);">
                 <template v-slot:header>
-                    WTF is Harberger Tax<sup class="text-muted">(and why should I care?)</sup>
+                    WTF is Harberger Tax
+                    <span>(and why should I care?)</span>
                 </template>
                 <template v-slot:lead>
                     <p class="text-white text-left">
@@ -90,9 +91,11 @@
                 <article class="text-left">
                     <VueShowdown :markdown="require(`@/assets/custom/docs/Section2/Main.md`).default" flavor="github" :options="{ emoji: true }" />
                 </article>
+                <br>
+                <br>
                 <b-row>
                     <b-col v-for="sentiment, index in [false, false, true]" :key="index">
-                        <b-card :border-variant="sentiment ? 'success' : 'danger'">
+                        <b-card :border-variant="sentiment ? 'success' : 'danger'" class="mb-3">
                             <b-card-header class="bg-transparent border-0">
                                 <b-avatar :variant="sentiment ? 'success' : 'danger'"><BIconHandThumbsUpFill v-if="sentiment"></BIconHandThumbsUpFill><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill></b-avatar>
                             </b-card-header>
@@ -164,7 +167,7 @@
                 <br>
                 <b-row>
                     <b-col v-for="sentiment, index in [true, true, false]" :key="index">
-                        <b-card bg-variant="dark" :border-variant="sentiment ? 'success' : 'danger'">
+                        <b-card bg-variant="dark" :border-variant="sentiment ? 'success' : 'danger'" class="mb-3">
                             <b-card-header class="bg-transparent border-0">
                                 <b-avatar :variant="sentiment ? 'success' : 'danger'"><BIconHandThumbsUpFill v-if="sentiment"></BIconHandThumbsUpFill><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill></b-avatar>
                             </b-card-header>
@@ -260,7 +263,7 @@
 
                 <b-row>
                     <b-col v-for="sentiment, index in [true, true, false]" :key="index">
-                        <b-card bg-variant="dark" :border-variant="sentiment ? 'success' : 'danger'">
+                        <b-card bg-variant="dark" :border-variant="sentiment ? 'success' : 'danger'" class="mb-3">
                             <b-card-header class="bg-transparent border-0">
                                 <b-avatar :variant="sentiment ? 'success' : 'danger'"><BIconHandThumbsUpFill v-if="sentiment"></BIconHandThumbsUpFill><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill></b-avatar>
                             </b-card-header>
