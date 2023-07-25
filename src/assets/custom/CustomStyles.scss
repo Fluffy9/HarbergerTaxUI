@@ -10,7 +10,6 @@ $body-bg:#050f19;
 // $warning: #fae68f;
 html, body, #app {
     font-family: 'Rubik', sans-serif;
-    overflow-x: hidden; 
 }
 
 article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
@@ -47,12 +46,10 @@ a {
 .pattern:before {
     content: "";
     position: absolute;
-    width: 500%;
-    height: 500%;
-    top: -100%;
-    left: -100%;
-    right: 200;
-    bottom: 200;
+    top: -200%;
+    left: -200%;
+    bottom: 0;
+    right: 0;
     z-index: -1;
     background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
     transform: rotate(30deg);
@@ -62,14 +59,18 @@ a {
 }
 #footer {
     position: relative;
+    overflow: hidden;
+    max-width: 1500px;
+    min-width: 500px;
+    margin: 0 auto;
 }
 #footer .pattern:before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    bottom: 50%;
-    right: 50%;
+    top: -1000%;
+    left: -100%;
+    bottom: 0%;
+    right: -10%;
     z-index: -1;
     background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
     transform: rotate(30deg);

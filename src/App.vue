@@ -27,9 +27,9 @@
     </div>
     
     <router-view/>
-
-    <div id="footer" class="position-relative" style="max-height: 200px; overflow: hidden;">
-      <div class="pattern h-100 w-100">
+    <br>
+    <div id="footer" style="max-height: 200px;">
+      <div class="pattern">
         <div class="container text-light">
           <br>
           <br>

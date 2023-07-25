@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-hidden">
+    <div>
         <div id="header" class="container pb-5 pattern">
             <b-jumbotron class="mt-4" style="background-color: #050f19; border-radius: 20px; border: solid 5px white; transform: rotate(-2deg);">
                 <template v-slot:header>
