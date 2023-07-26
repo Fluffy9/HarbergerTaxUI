@@ -71,11 +71,11 @@
                 >
                   <b-form-input id="TurnoverRate" v-model="SlidingScale.TurnoverRate" type="range"  min="0" max="100"></b-form-input>
                 </b-form-group>
-                Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2^abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) -1) * 0.05 
+                Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2^abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) -1) * 0.5 
                 <br>Top Bun: <br> {{ chartData.datasets[0].data }} = 100 - 10 - {{chartData.datasets[2].data}}
                 <br>Middle Bun: <br> 10
                 <br>Bottom Bun: <br> 
-                <br>{{ chartData.datasets[2].data }}= (100 - 10)*round(0.5+{{ adjustmentPercentage }})
+                <br>{{ chartData.datasets[2].data }}= (100 - 10)*(0.5+{{ adjustmentPercentage }})
                 </b-form-group>
 
             </b-card>
@@ -145,7 +145,7 @@
     computed: {
         adjustmentPercentage(){
             let diff = this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate
-            return ((diff / Math.abs(diff)) * ((2**Math.abs(diff)) -1) * 0.05 || 0)
+            return ((diff / Math.abs(diff)) * ((2**Math.abs(diff)) -1) * 0.5 || 0)
         },
         chartData(){
             let middle = 10
@@ -153,7 +153,7 @@
             let top = 100 - middle - bottom
             console.log(`Top: ${top}, Middle: ${middle}, Bottom: ${bottom}`)
             return {
-                labels: ["500K"],
+                labels: ["Percentage"],
                 datasets: [
                     { label: "Turnover Force", data: [Math.round(top)], backgroundColor: "rgba(255, 180, 98, .6)"},
                     { label: "Self-Assessed Value", data: [Math.round(middle)], backgroundColor: "rgba(215, 100, 93, .6)"},
