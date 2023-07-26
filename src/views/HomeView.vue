@@ -301,6 +301,30 @@
                         <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section5/Title.md`).default" flavor="github" :options="{ emoji: true }" />
                     </b-col>
                 </b-row>     
+                <br>
+                <b-row>
+                    <b-col v-for="x, index in [,,,]" :key="'usecases-' + index">
+                        <b-card v-if="index < 3" bg-variant="light" border-variant="info" class="mb-3">
+                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section5/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
+                            <b-collapse :id="`collapse-section5-${index}`" v-model="collapse.section5[index]" class="mt-2">
+                                <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section5/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
+                                <br>
+                            </b-collapse>
+                            <b-button
+                            block
+                            variant="link"
+                            :class="collapse.section5[index] ? null : 'collapsed'"
+                            :aria-expanded="collapse.section5[index] ? 'true' : 'false'"
+                            :aria-controls="`collapse-section5-${index}`"
+                            @click="toggleCollapse(5, index)"
+                            >
+                                <BIconCaretUpFill class="info" v-if="collapse.section5[index]"></BIconCaretUpFill>
+                                <BIconCaretDownFill class="info" v-else></BIconCaretDownFill>
+                            </b-button>
+                        </b-card>
+                    </b-col>
+                </b-row>
+
             </div>
         </div>
         <div id="Section6" class="section bg-white">
@@ -348,9 +372,12 @@ export default {
   },
   data () {
     return {
+        // The number of FAQ questions
         FAQs: 2,
         collapse: {
-            section2: [false, false, false]
+            // Whether or not the collapse starts open
+            section2: [false, false, false],
+            section5: [false, false, false],
         }
     }
   },
