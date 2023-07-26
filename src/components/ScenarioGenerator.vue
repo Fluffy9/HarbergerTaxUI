@@ -72,7 +72,7 @@
                   <b-form-input id="TurnoverRate" v-model="SlidingScale.TurnoverRate" type="range"  min="0" max="100"></b-form-input>
                 </b-form-group>
                 Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2^abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) -1) * 0.05 
-                <br>Top Bun: <br> {{ chartData.datasets[0].data }} = 100 - 10 - {{adjustmentPercentage}}
+                <br>Top Bun: <br> {{ chartData.datasets[0].data }} = 100 - 10 - {{chartData.datasets[2].data}}
                 <br>Middle Bun: <br> 10
                 <br>Bottom Bun: <br> 
                 <br>{{ chartData.datasets[2].data }}= (100 - 10)*round(0.5+{{ adjustmentPercentage }})
@@ -149,15 +149,15 @@
         },
         chartData(){
             let middle = 10
-            let bottom = (100 - middle)*Math.round(0.5+this.adjustmentPercentage)
+            let bottom = (100 - middle)*(0.5+this.adjustmentPercentage)
             let top = 100 - middle - bottom
             console.log(`Top: ${top}, Middle: ${middle}, Bottom: ${bottom}`)
             return {
                 labels: ["500K"],
                 datasets: [
-                    { label: "Turnover Force", data: [top], backgroundColor: "rgba(255, 180, 98, .6)"},
-                    { label: "Self-Assessed Value", data: [middle], backgroundColor: "rgba(215, 100, 93, .6)"},
-                    { label: "Tax Force", data: [bottom], backgroundColor: "rgba(255, 180, 98, .6)" },
+                    { label: "Turnover Force", data: [Math.round(top)], backgroundColor: "rgba(255, 180, 98, .6)"},
+                    { label: "Self-Assessed Value", data: [Math.round(middle)], backgroundColor: "rgba(215, 100, 93, .6)"},
+                    { label: "Tax Force", data: [Math.round(bottom)], backgroundColor: "rgba(255, 180, 98, .6)" },
                 ]
             }
         }, 
