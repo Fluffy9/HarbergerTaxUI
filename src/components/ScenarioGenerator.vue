@@ -71,7 +71,7 @@
                 >
                   <b-form-input id="TurnoverRate" v-model="SlidingScale.TurnoverRate" type="range"  min="0" max="100"></b-form-input>
                 </b-form-group>
-                Adjustment Percentage: {{ adjustmentPercentage }}
+                Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2 ** {{ this.SlidingScale.TurnoverRate }}) -1) * 0.05 
               </b-form-group>
 
             </b-card>
@@ -141,11 +141,11 @@
     computed: {
         adjustmentPercentage(){
             let diff = this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate
-            return (diff / Math.abs(diff)) * (2**(Math.abs(diff)) -1) * 0.05
+            return (diff / Math.abs(diff)) * (2**(Math.abs(diff)) -1) * 0.05 || 0
         },
         chartData(){
             let middle = 10
-            let bottom = 90*(0.5 * this.adjustmentPercentage)
+            let bottom = (100 - middle)*Math.round(0.5+this.adjustmentPercentage)
             let top = 100 - middle - bottom
             console.log(`Top: ${top}, Middle: ${middle}, Bottom: ${bottom}`)
             return {
