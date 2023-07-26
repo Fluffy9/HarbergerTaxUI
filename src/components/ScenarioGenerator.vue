@@ -72,7 +72,11 @@
                   <b-form-input id="TurnoverRate" v-model="SlidingScale.TurnoverRate" type="range"  min="0" max="100"></b-form-input>
                 </b-form-group>
                 Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2^{{ this.SlidingScale.TurnoverRate }}) -1) * 0.05 
-              </b-form-group>
+                <br>Top Bun: <br> {{ chartData.datasets[1].data }} = 100 - 10 - {{adjustmentPercentage}}
+                <br>Middle Bun: <br> 10
+                <br>Bottom Bun: <br> 
+                <br>{{ chartData.datasets[2].data }}= (100 - 10)*round(0.5+{{ adjustmentPercentage }})
+                </b-form-group>
 
             </b-card>
         </b-card-group>
