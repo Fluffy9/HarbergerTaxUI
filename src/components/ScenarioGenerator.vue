@@ -145,7 +145,7 @@
     computed: {
         adjustmentPercentage(){
             let diff = this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate
-            return (diff / Math.abs(diff)) * ((2**Math.abs(diff)) -1) * 0.05 || 0
+            return ((diff / Math.abs(diff)) * ((2**Math.abs(diff)) -1) * 0.05 || 0)
         },
         chartData(){
             let middle = 10
