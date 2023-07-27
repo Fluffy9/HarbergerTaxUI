@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="header" class="container pb-5 pattern">
-            <b-jumbotron class="mt-4" style="background-color: #050f19; border-radius: 20px; border: solid 5px white; transform: rotate(-2deg);">
+            <b-jumbotron class="mt-4 mx-auto" style="width: 90%; background-color: #050f19; border-radius: 20px; border: solid 5px white; transform: rotate(-2deg);">
                 <template v-slot:header>
                     WTF is Harberger Tax
                     <span>(and why should I care?)</span>
@@ -250,16 +250,7 @@
                     </b-row>
 
                     <br>
-                    <b-row>
-                        <b-col>
-                            <h3 class="text-left">TLDR</h3>
-                            <p class="text-left">
-                                What's the key take away?
-                                Governments should set the tax rate below the turnover rate to optimize total welfare, balancing individual investment incentives and allocatable efficiency.
-                            </p>
-                        </b-col>
-                    </b-row>
-                    <br>
+
 
                 <b-row>
                     <b-col v-for="sentiment, index in [true, true, false]" :key="index">

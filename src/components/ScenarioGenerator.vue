@@ -1,5 +1,5 @@
 <template>
-    <div class="text-dark">
+    <div class="text-dark shadow p-4" style="border-radius: 5px; backdrop-filter: blur(10px); background-color: #ffffff26; border: solid 1px;">
         <h2 class="text-white text-left">Scenario Generator</h2>
         <br>
         <b-alert variant="primary"  :show="Boolean(activeCase['id'])">
@@ -27,15 +27,15 @@
                 </b-col> -->
             </b-row>
         </b-alert>
+                <b-pagination
+                    v-model="pagination.currentPage"
+                    :total-rows="pagination.rows"
+                    :per-page="pagination.perPage"
+                    aria-controls="my-table"
+                    :limit="10"
+                    align="fill"
+                ></b-pagination>
         <br>
-        <b-pagination
-            v-model="pagination.currentPage"
-            :total-rows="pagination.rows"
-            :per-page="pagination.perPage"
-            aria-controls="my-table"
-            :limit="10"
-            align="fill"
-        ></b-pagination>
         <br>
         <b-card-group>
             <b-card>
@@ -71,14 +71,29 @@
                 >
                   <b-form-input id="TurnoverRate" v-model="SlidingScale.TurnoverRate" type="range"  min="0" max="1" step=".01"></b-form-input>
                 </b-form-group>
-                Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2^abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) -1) * 0.5 
-                <br>Top Bun: <br> {{ chartData.datasets[0].data }} = 100 - 10 - {{chartData.datasets[2].data}}
-                <br>Middle Bun: <br> 10
-                <br>Bottom Bun: <br> 
-                <br>{{ chartData.datasets[2].data }}= (100 - 10)*(0.5+{{ adjustmentPercentage }})
+                <div style="display: none;">
+                    Adjustment Percentage: <br> {{ adjustmentPercentage }} = (({{this.SlidingScale.TurnoverRate}} - {{this.SlidingScale.TaxRate}})/abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) * ((2^abs({{ this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate }})) -1) * 0.5 
+                    <br>Top Bun: <br> {{ chartData.datasets[0].data }} = 100 - 10 - {{chartData.datasets[2].data}}
+                    <br>Middle Bun: <br> 10
+                    <br>Bottom Bun: <br> 
+                    <br>{{ chartData.datasets[2].data }}= (100 - 10)*(0.5+{{ adjustmentPercentage }})
+
+                </div>
                 </b-form-group>
 
             </b-card>
+            <br>
+            <b-row>
+                <b-col class="text-white">
+                    <br>
+                    <h3 class="text-left">TLDR</h3>
+                    <p class="text-left">
+                        What's the key take away?
+                        Governments should set the tax rate below the turnover rate to optimize total welfare, balancing individual investment incentives and allocatable efficiency.
+                    </p>
+                </b-col>
+            </b-row>
+            <br>
         </b-card-group>
     </div>
 
