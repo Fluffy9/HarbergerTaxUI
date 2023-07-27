@@ -55,7 +55,7 @@
                 class="mb-0"
               >
                 <b-form-group
-                  :label="`Tax Rate ${SlidingScale.TaxRate}%:`"
+                  :label="`Tax Rate ${SlidingScale.TaxRate*100}%:`"
                   label-for="TaxRate"
                   label-cols-sm="3"
                   label-align-sm="right"
@@ -64,7 +64,7 @@
                 </b-form-group>
 
                 <b-form-group
-                  :label="`Turnover Rate ${SlidingScale.TurnoverRate}%:`"
+                  :label="`Turnover Rate ${SlidingScale.TurnoverRate*100}%:`"
                   label-for="TurnoverRate"
                   label-cols-sm="3"
                   label-align-sm="right"
