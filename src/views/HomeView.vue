@@ -75,10 +75,12 @@
                 <b-card-header class="p-0 m-0">
                     <b-embed
                         type="iframe"
-                        aspect="16by9"
-                        src="https://itch.io/embed/2155529"
+                        aspect="4by3"
+                        src="https://itch.io/embed-upload/8251302?color=333333"
                         allowfullscreen
                     ></b-embed>
+
+
                 </b-card-header>
                 <b-card-text>
                     <br>
@@ -147,8 +149,8 @@
                         <b-card-header class="p-0 m-0">
                             <b-embed
                                 type="iframe"
-                                aspect="16by9"
-                                src="https://itch.io/embed/2155529"
+                                aspect="4by3"
+                                src="https://itch.io/embed-upload/8251302?color=333333"
                                 allowfullscreen
                             ></b-embed>
                         </b-card-header>

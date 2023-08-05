@@ -31,7 +31,6 @@
                     v-model="pagination.currentPage"
                     :total-rows="pagination.rows"
                     :per-page="pagination.perPage"
-                    aria-controls="my-table"
                     :limit="10"
                     align="fill"
                 ></b-pagination>
@@ -55,7 +54,7 @@
                 class="mb-0"
               >
                 <b-form-group
-                  :label="`Tax Rate ${SlidingScale.TaxRate*100}%:`"
+                  :label="`Tax Rate ${Math.round(SlidingScale.TaxRate*100)}%:`"
                   label-for="TaxRate"
                   label-cols-sm="3"
                   label-align-sm="right"
@@ -64,7 +63,7 @@
                 </b-form-group>
 
                 <b-form-group
-                  :label="`Turnover Rate ${SlidingScale.TurnoverRate*100}%:`"
+                  :label="`Turnover Rate ${Math.round(SlidingScale.TurnoverRate*100)}%:`"
                   label-for="TurnoverRate"
                   label-cols-sm="3"
                   label-align-sm="right"
@@ -122,7 +121,7 @@
         turnoverForce: 45,
         pagination: {
             currentPage: 1,
-            rows: 10,
+            rows: 8,
             perPage: 1,
         },
         HamburgerChart: {
@@ -145,14 +144,14 @@
             TurnoverRate: 0
         },
         activeCases: [
-            {id: 5, name: "Tax Rate is 0", importance: 10, active: false},
-            {id: 6, name: "Tax Rate is 100", importance: 9, active: false},
-            {id: 7, name: "Turnover Rate is 0", importance: 8, active: false},
-            {id: 8, name: "Turnover Rate is 100", importance: 7, active: false},
-            {id: 4, name: "Turnover Rate is low", importance: 6, active: false},
-            {id: 1, name: "Tax Rate = Turnover Rate", importance: 5, active: false},
-            {id: 2, name: "Tax Rate < Turnover Rate", importance: 4, active: false},
-            {id: 3, name: "Turnover Rate < Tax Rate", importance: 3, active: false},
+            {id: 5, name: "Tax Rate is 0", importance: 10, active: false, preset: {taxRate: 0, turnoverRate: 0.10}},
+            {id: 6, name: "Tax Rate is 100", importance: 9, active: false, preset: {taxRate: 1.00, turnoverRate: 0.10}},
+            {id: 7, name: "Turnover Rate is 0", importance: 8, active: false, preset: {taxRate: 0.10, turnoverRate: 0}},
+            {id: 8, name: "Turnover Rate is 100", importance: 7, active: false, preset: {taxRate: 0.10, turnoverRate: 1.00}},
+            {id: 4, name: "Turnover Rate is low", importance: 6, active: false, preset: {taxRate: 0.10, turnoverRate: .01}},
+            {id: 1, name: "Tax Rate = Turnover Rate", importance: 5, active: false, preset: {taxRate: 0.10, turnoverRate: 0.10}},
+            {id: 2, name: "Tax Rate < Turnover Rate", importance: 4, active: false, preset: {taxRate: 0.10, turnoverRate: 0.50}},
+            {id: 3, name: "Turnover Rate < Tax Rate", importance: 3, active: false, preset: {taxRate: 0.50, turnoverRate: 0.10}},
         ],
         activeCase: []
       }
@@ -178,17 +177,41 @@
         }, 
     },
     watch: {
+        pagination: {
+            handler(val){
+                this.setPreset(val.currentPage)
+            }, 
+            deep: true
+        },
         SlidingScale: {
             handler(val) {
-                let results = this.checkCases()
-                this.activeCases = this.activeCases.map(x => { return {...x, ...{active: results.filter(y => y?.name == x.name)[0]?.active || false} } })
-                this.activeCase = this.activeCases.filter(cases => cases.active)
-                this.activeCase = this.activeCases.length > 0 ? this.activeCase.reduce((max, cases) => max.importance > cases.importance ? max : cases) : []
+                this.setActiveCase()
+                this.setPagination(val)
             },
             deep: true
         }
     },
     methods: {
+        setPagination(scale){
+            let preset = this.activeCases.filter(x => scale.TaxRate == x.preset.taxRate && scale.TurnoverRate == x.preset.turnoverRate)
+            if(preset.length > 0){
+                this.pagination.currentPage = preset[0].id
+            }
+        },
+        setPreset(id){
+            debugger
+            let current = this.activeCases.find(x => x.id == id)
+            this.SlidingScale.TaxRate = current.preset.taxRate
+            this.SlidingScale.TurnoverRate = current.preset.turnoverRate
+            this.setActiveCase()
+        },
+        setActiveCase(){
+            let results = this.checkCases()
+            this.activeCases = this.activeCases.map(x => { return {...x, ...{active: results.filter(y => y?.name == x.name)[0]?.active || false} } })
+            this.activeCase = this.activeCases.filter(cases => cases.active)
+            this.activeCase = this.activeCases.length > 0 ? this.activeCase.reduce((max, cases) => max.importance > cases.importance ? max : cases) : []
+
+        },
         checkCases(){
             let results = []
             if (this.SlidingScale.TaxRate == this.SlidingScale.TurnoverRate){
@@ -200,19 +223,19 @@
             if (this.SlidingScale.TurnoverRate < this.SlidingScale.TaxRate){
                 results.push({name: "Turnover Rate < Tax Rate", active:true})
             }
-            if(this.SlidingScale.TurnoverRate < 2){
+            if(this.SlidingScale.TurnoverRate < .02){
                 results.push({name: "Turnover Rate is low", active:true})
             }
             if(this.SlidingScale.TaxRate == 0 ){
                 results.push({name: "Tax Rate is 0", active:true})
             }
-            if(this.SlidingScale.TaxRate == 100){
+            if(this.SlidingScale.TaxRate == 1.00){
                 results.push({name: "Tax Rate is 100", active:true})
             }
             if(this.SlidingScale.TurnoverRate == 0){
                 results.push({name: "Turnover Rate is 0", active:true})
             }
-            if(this.SlidingScale.TurnoverRate == 100){
+            if(this.SlidingScale.TurnoverRate == 1.00){
                 results.push({name: "Turnover Rate is 100", active:true})
             }   
             return results
@@ -223,11 +246,7 @@
         // this.addPlugin([ChartjsPluginStacked100]),
         // this.renderChart(this.HamburgerChart.chartData, this.HamburgerChart.chartData.options)
 
-        let results = this.checkCases()
-        this.activeCases = this.activeCases.map(x => { return {...x, ...{active: results.filter(y => y?.name == x.name)[0]?.active || false} } })
-        this.activeCase = this.activeCases.filter(cases => cases.active)
-        this.activeCase = this.activeCases.length > 0 ? this.activeCase.reduce((max, cases) => max.importance > cases.importance ? max : cases) : []
-
+        this.setActiveCase()
     }
   }
   </script>
