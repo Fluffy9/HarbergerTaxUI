@@ -54,17 +54,6 @@
                 </small>
               </template>
             </b-card>
-            <!-- <b-card
-              class="shadow mx-1 image-1"
-              img-src="@/assets/custom/images/City8.png"
-            >
-              <template v-slot="footer">
-                <small class="text-muted text-left">
-                  Partial common ownership is a model for ownership. Like
-                  private ownership except assets are always for sale
-                </small>
-              </template>
-            </b-card> -->
             <article class="text-left">
               <h3>What is it?</h3>
               <p>
