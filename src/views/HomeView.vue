@@ -41,11 +41,22 @@
         </b-row>
         <br />
         <b-row>
-          <b-col>
+          <b-col class="lesson1-content">
             <b-card
-              class="shadow mx-1"
-              style="float: right; max-width: 50%"
-              img-src="@/assets/custom/images/city-view.png"
+              class="shadow mx-1 custom-card-1"
+              style="float: right"
+              img-src="@/assets/custom/images/City8.png"
+            >
+              <template v-slot="footer">
+                <small class="text-muted text-left">
+                  Partial common ownership is a model for ownership. Like
+                  private ownership except assets are always for sale.
+                </small>
+              </template>
+            </b-card>
+            <!-- <b-card
+              class="shadow mx-1 image-1"
+              img-src="@/assets/custom/images/City8.png"
             >
               <template v-slot="footer">
                 <small class="text-muted text-left">
@@ -53,23 +64,33 @@
                   private ownership except assets are always for sale
                 </small>
               </template>
-            </b-card>
+            </b-card> -->
             <article class="text-left">
               <h3>What is it?</h3>
-              Partial common ownership, as the name suggests, is a model for
-              ownership. It's a lot like private ownership but with one major
-              twist.
-
-              <a v-b-tooltip.hover.top="'Assets, land or property'">Assets</a>
-              are always for sale! Crazy right? At its core, PCO holds this
-              philosophical idea: "Assets should benefit both individuals and
-              society as a whole, not just one individual".
+              <p>
+                Partial Common Ownership (PCO) is a model for ownership. It's a
+                lot like private ownership but with one major twist:
+                <a
+                  class="Tooltip"
+                  v-b-tooltip.hover.top="
+                    'Something valuable that is owned by someone. e.g. forests, copyrights, land, stocks, or real estate'
+                  "
+                  >Assets</a
+                >
+                are always for sale!
+              </p>
+              <p>
+                At its core, PCO advocates that assets should benefit both
+                individuals and society as a whole, rather than benefiting only
+                a single person.
+              </p>
               <br />
               <h3>Why do we need it?</h3>
-              Private ownership has a few problems and partial common ownership
-              is the solution. To learn what PCO is and the problems it solves,
-              we will first explore the problems with Private Ownership. Lets
-              play some games!
+              <p>
+                Private ownership has a few problems and partial common
+                ownership is the solution.
+              </p>
+              <p>Click "Next Lesson" to understand what those problems are.</p>
             </article>
           </b-col>
         </b-row>
@@ -395,6 +416,7 @@
 
                 If you must sell at your self-assessed value and the
                 <a
+                  class="Tooltip"
                   v-b-tooltip.hover.top="
                     'the demand for assets like yours is high!'
                   "

@@ -33,6 +33,29 @@ a {
   }
 }
 
+.shadow.mx-1.custom-card-1 {
+  background-color: lightgray;
+  align-items: center;
+  width: 500px;
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+
+  img {
+    // width: 480px;
+    // height: 480px;
+    padding: 1rem;
+  }
+  .card-body {
+    background-color: white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+
+.Tooltip {
+  text-decoration: underline;
+}
+
 #header {
   max-width: 1500px;
   //   min-width: 500px; // TODO
@@ -156,8 +179,24 @@ $breakpoint-xl: 1200px;
 }
 
 @media (max-width: $breakpoint-lg) {
+  .shadow.mx-1.custom-card-1 {
+    width: 300px;
+  }
 }
 @media (max-width: $breakpoint-md) {
+  .shadow.mx-1.custom-card-1 {
+    width: 300px;
+    margin-left: 0 !important;
+    .card-body {
+      display: none;
+    }
+  }
+  .lesson1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
   .TitleText {
     font-size: 3rem;
   }
