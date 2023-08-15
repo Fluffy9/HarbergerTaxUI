@@ -1,383 +1,664 @@
 <template>
-    <div>
-        <div id="header" class="container pb-5 pattern">
-            <b-jumbotron class="mt-4 mx-auto" style="width: 90%; background-color: #050f19; border-radius: 20px; border: solid 5px white; transform: rotate(-2deg);">
-                <template v-slot:header>
-                    WTF is Harberger Tax
-                    <span>(and why should I care?)</span>
-                </template>
-                <template v-slot:lead>
+  <div>
+    <div id="header" class="container pb-5 pattern">
+      <b-jumbotron
+        class="mt-4 mx-auto"
+        style="
+          width: 90%;
+          background-color: #050f19;
+          border-radius: 20px;
+          border: solid 5px #f3f3f3;
+          transform: rotate(-2deg);
+        "
+      >
+        <template v-slot:header>
+          <p class="TitleText">WTF is Partial Common Ownership?</p>
+          <p class="TitleTextSub">(and why should I care?)</p>
+        </template>
+        <!-- <template v-slot:lead>
                     <p class="text-white text-left">
                         Join us on a quest to learn more — Complete with fun games, interactive quizzes and hidden treasures!
                     </p>
-                </template>
-            </b-jumbotron>
-        </div>
-        <div id="Section1" class="section bg-white">
-            <div class="container py-4">
-                <b-row>
-                    <b-col cols="auto">
-                        <b-badge variant="dark" pill class="p-3">Lesson #1</b-badge>
-                    </b-col>
-                    <b-col class="float-left text-left">
-                        <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section1/Title.md`).default" flavor="github" :options="{ emoji: true }" />                
-                    </b-col>
-                </b-row>                
-                <br>
-                <b-row>
-                    <b-col>
-                        <b-card class="shadow mx-1" style="float: right; max-width: 50%;" img-src="@/assets/custom/images/city-view.png">
-                            <template v-slot="footer">
-                                <small class="text-muted text-left">
-                                    Partial common ownership is a model for ownership. Like private ownership except assets are always for sale
-                                </small>
-                            </template>
-                        </b-card>
-                        <article class="text-left">
-                            <h3>What is it?</h3>
-                            Partial common ownership, as the name suggests, is a model for ownership. It's a lot like private ownership but with one major twist.
-
-                            <a v-b-tooltip.hover.top="'Assets, land or property'">Assets</a> are always for sale! Crazy right?
-
-                            At its core, PCO holds this philosophical idea:
-                            "Assets should benefit both individuals and society as a whole, not just one individual".
-                            <br>
-                            <h3>Why do we need it?</h3>
-                            Private ownership has a few problems and partial common ownership is the solution. 
-
-                            To learn what PCO is and the problems it solves, we will first explore the problems with Private Ownership.
-
-                            Lets play some games!
-
-                        </article>                        
-                    </b-col>
-                </b-row>
-
-                <b-button class="float-right my-4" href="#Section2" variant="primary">Next Lesson</b-button>
-                <br>
-            </div>
-        </div>    
-        <div id="Section2" class="section bg-light">
-            <div class="container py-4">
-                <b-row>
-                    <b-col cols="auto">
-                        <b-badge variant="dark" pill class="p-3">Lesson #2</b-badge>
-                    </b-col>
-                    <b-col class="float-left text-left">
-                        <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section2/Title.md`).default" flavor="github" :options="{ emoji: true }" />
-                    </b-col>
-                </b-row>                
-                <br>
-                <b-card
-                class="float-right shadow mx-1"
-                style="max-width: 50%;"
-                >
-                <b-card-header class="p-0 m-0">
-                    <b-embed
-                        type="iframe"
-                        aspect="4by3"
-                        src="https://itch.io/embed-upload/8251302?color=333333"
-                        allowfullscreen
-                    ></b-embed>
-
-
-                </b-card-header>
-                <b-card-text>
-                    <br>
-                    <small class="text-muted">
-
-                        <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section2/Caption.md`).default" flavor="github" :options="{ emoji: true }" />
-                    </small>
-                </b-card-text>
-                </b-card>
-                <article class="text-left">
-                    <VueShowdown :markdown="require(`@/assets/custom/docs/Section2/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                </article>
-                <br>
-                <br>
-                <b-row>
-                    <b-col v-for="sentiment, index in [false, false, true]" :key="index">
-                        <b-card :border-variant="sentiment ? 'success' : 'danger'" class="mb-3">
-                            <b-card-header class="bg-transparent border-0">
-                                <b-avatar :variant="sentiment ? 'success' : 'danger'"><BIconHandThumbsUpFill v-if="sentiment"></BIconHandThumbsUpFill><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill></b-avatar>
-                            </b-card-header>
-                            <br>
-                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section2/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                            <b-collapse :id="`collapse-section2-${index}`" v-model="collapse.section2[index]" class="mt-2">
-                                <b-alert header="Example" :variant="sentiment ? 'success' : 'danger'" show>
-                                    <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section2/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
-                                </b-alert>
-                                <br>
-                            </b-collapse>
-                            <b-button
-                            block
-                            variant="link"
-                            :class="collapse.section2[index] ? null : 'collapsed'"
-                            :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
-                            :aria-controls="`collapse-section2-${index}`"
-                            @click="toggleCollapse(2, index)"
-                            >
-                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section2[index]"></BIconCaretUpFill>
-                                <BIconCaretDownFill :class="sentiment ? 'text-success' : 'text-danger'" v-else></BIconCaretDownFill>
-                            </b-button>
-                        </b-card>
-                    </b-col>
-                </b-row>
-                <br>
-                <b-button class="float-right my-4" href="#Section3" variant="primary">Next Lesson</b-button>
-                <br>
-            </div>
-        </div>
-        <div id="Section3" class="section bg-dark text-white">
-            <div class="container py-4">
-                <b-row>
-                    <b-col cols="auto">
-                        <b-badge variant="light" pill class="p-3">Lesson #3</b-badge>
-                    </b-col>
-                    <b-col class="float-left text-left">
-                        <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section3/Title.md`).default" flavor="github" :options="{ emoji: true }" />
-                    </b-col>
-                </b-row>                
-                <br>
-                <b-row>
-                    <b-col>
-                        <b-card
-                        bg-variant="dark"
-                        class="float-right shadow mx-1"
-                        style="max-width: 50%;"
-                        >
-                        <b-card-header class="p-0 m-0">
-                            <b-embed
-                                type="iframe"
-                                aspect="4by3"
-                                src="https://itch.io/embed-upload/8251302?color=333333"
-                                allowfullscreen
-                            ></b-embed>
-                        </b-card-header>
-                        <b-card-text>
-                            <br>
-                            <small>
-                                <VueShowdown class="text-left text-muted" :markdown="require(`@/assets/custom/docs/Section3/Caption.md`).default" flavor="github" :options="{ emoji: true }" />
-                            </small>
-                        </b-card-text>
-                        </b-card>
-                        <article class="text-left">
-                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section3/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                        </article>                        
-                    </b-col>
-                </b-row>
-                <br>
-                <b-row>
-                    <b-col v-for="sentiment, index in [true, true, false]" :key="index">
-                        <b-card bg-variant="dark" :border-variant="sentiment ? 'success' : 'danger'" class="mb-3">
-                            <b-card-header class="bg-transparent border-0">
-                                <b-avatar :variant="sentiment ? 'success' : 'danger'"><BIconHandThumbsUpFill v-if="sentiment"></BIconHandThumbsUpFill><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill></b-avatar>
-                            </b-card-header>
-                            <br>
-                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section3/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                            <b-collapse :id="`collapse-section2-${index}`" v-model="collapse.section2[index]" class="mt-2">
-                                <b-alert header="Example" :variant="sentiment ? 'success' : 'danger'" show>
-                                    <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section3/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
-                                </b-alert>
-                                <br>
-                            </b-collapse>
-                            <b-button
-                            block
-                            variant="link"
-                            :class="collapse.section2[index] ? null : 'collapsed'"
-                            :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
-                            :aria-controls="`collapse-section2-${index}`"
-                            @click="toggleCollapse(2, index)"
-                            >
-                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section2[index]"></BIconCaretUpFill>
-                                <BIconCaretDownFill :class="sentiment ? 'text-success' : 'text-danger'" v-else></BIconCaretDownFill>
-                            </b-button>
-                        </b-card>
-                    </b-col>
-                </b-row>
-                <b-button class="float-right my-4" href="#Section4" variant="primary">Next Lesson</b-button>
-                <br>
-            </div>
-        </div>
-        <div id="Section4" class="section position-relative p-0 text-white">
-            <div class="pattern-hamburger">
-                <div class="container py-4">
-                    <b-row>
-                        <b-col cols="auto">
-                            <b-badge variant="light" pill class="p-3">Lesson #4</b-badge>
-                        </b-col>
-                        <b-col class="float-left text-left">
-                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Title.md`).default" flavor="github" :options="{ emoji: true }" />
-                        </b-col>
-                    </b-row>                
-                    <br>
-                    <b-row>
-                        <b-col>
-                            <b-card overlay
-                            bg-variant="dark"
-                            class="shadow float-right mx-1"
-                            style="max-width: 50%;"
-                            img-src="@/assets/custom/images/storefront.png"
-                            >
-                            <b-alert class="text-dark" show >
-                                <span style="opacity: 1;">
-                                    Hi, I'm Ahmed.
-                                    This is my Hamburger shop.
-
-                                    My honest and true value for this shop is $500K.    
-
-                                </span>
-                            </b-alert>
-                            </b-card>
-                            <article class="text-left">
-                                In the game, there was a tax that owners paid continually at a rate of 10% per year based on their valuation of their property. This mechanism is called Harberger Taxation.
-
-                                <h3>Harberger Taxation:</h3>
-                                <br>
-                                <ul>
-                                    <li>Owners must pay an X% tax based on their self-assessed value</li>
-                                    <li>Owners must sell at their self-assessed value</li>
-                                </ul>
-
-                                If you must sell at your self-assessed value and the <a v-b-tooltip.hover.top="'the demand for assets like yours is high!'">turnover rate</a> of assets is high, then you could set a higher price.
-                                It's important you see these two act in opposite directions...
-                            </article>                        
-                        </b-col>
-                    </b-row>
-                    <br>
-                    <b-row>
-                        <b-col>
-                            <ScenarioGenerator></ScenarioGenerator>
-                        </b-col>
-                    </b-row>
-
-                    <br>
-
-
-                <b-row>
-                    <b-col v-for="sentiment, index in [true, true, false]" :key="index">
-                        <b-card bg-variant="dark" :border-variant="sentiment ? 'success' : 'danger'" class="mb-3">
-                            <b-card-header class="bg-transparent border-0">
-                                <b-avatar :variant="sentiment ? 'success' : 'danger'"><BIconHandThumbsUpFill v-if="sentiment"></BIconHandThumbsUpFill><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill></b-avatar>
-                            </b-card-header>
-                            <br>
-                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                            <b-collapse :id="`collapse-section2-${index}`" v-model="collapse.section2[index]" class="mt-2">
-                                <b-alert header="Example" :variant="sentiment ? 'success' : 'danger'" show>
-                                    <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
-                                </b-alert>
-                                <br>
-                            </b-collapse>
-                            <b-button
-                            block
-                            variant="link"
-                            :class="collapse.section2[index] ? null : 'collapsed'"
-                            :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
-                            :aria-controls="`collapse-section2-${index}`"
-                            @click="toggleCollapse(2, index)"
-                            >
-                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section2[index]"></BIconCaretUpFill>
-                                <BIconCaretDownFill :class="sentiment ? 'text-success' : 'text-danger'" v-else></BIconCaretDownFill>
-                            </b-button>
-                        </b-card>
-                    </b-col>
-                </b-row>
-                <br>
-                </div>
-
-            </div>
-        </div>    
-        <div id="Section5" class="section bg-light">
-            <div class="container py-4">
-                <b-row>
-                    <b-col class="float-left text-left">
-                        <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section5/Title.md`).default" flavor="github" :options="{ emoji: true }" />
-                    </b-col>
-                </b-row>     
-                <br>
-                <b-row>
-                    <b-col v-for="x, index in [,,,]" :key="'usecases-' + index">
-                        <b-card v-if="index < 3" bg-variant="light" border-variant="info" class="mb-3">
-                            <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section5/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                            <b-collapse :id="`collapse-section5-${index}`" v-model="collapse.section5[index]" class="mt-2">
-                                <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section5/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
-                                <br>
-                            </b-collapse>
-                            <b-button
-                            block
-                            variant="link"
-                            :class="collapse.section5[index] ? null : 'collapsed'"
-                            :aria-expanded="collapse.section5[index] ? 'true' : 'false'"
-                            :aria-controls="`collapse-section5-${index}`"
-                            @click="toggleCollapse(5, index)"
-                            >
-                                <BIconCaretUpFill class="info" v-if="collapse.section5[index]"></BIconCaretUpFill>
-                                <BIconCaretDownFill class="info" v-else></BIconCaretDownFill>
-                            </b-button>
-                        </b-card>
-                    </b-col>
-                </b-row>
-
-            </div>
-        </div>
-        <div id="Section6" class="section bg-white">
-            <div class="container py-4">
-                <b-row>
-                    <b-col class="float-left text-left">
-                        <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section6/Title.md`).default" flavor="github" :options="{ emoji: true }" />
-                    </b-col>
-                </b-row>     
-                <div class="accordion" role="tablist">
-                    <div v-for="q, index in FAQs" :key="`faqs-` + index">
-                        <b-card no-body class="mb-1" >
-                            <b-card-header header-tag="header" class="p-1" role="tab">
-                                <b-button block v-b-toggle="`accordion-${index+1}`" variant="primary">
-                                    <h3><VueShowdown class="text-center" :markdown="require(`@/assets/custom/docs/Section6/Question${index+1}/Question.md`).default" flavor="github" :options="{ emoji: true }" /></h3>
-                                </b-button>
-                            </b-card-header>
-                            <b-collapse :id="`accordion-${index+1}`" :accordion="`accordion-${index+1}`" role="tabpanel">
-                                <b-card-body>
-                                    <b-card-text><VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section6/Question${index+1}/Answer.md`).default" flavor="github" :options="{ emoji: true }" /></b-card-text>
-                                </b-card-body>
-                            </b-collapse>
-                        </b-card>                        
-                    </div>
-
-                </div>
-            </div>
-        </div>
+                </template> -->
+      </b-jumbotron>
     </div>
+    <div id="Section1" class="section bg-white">
+      <div class="container py-4">
+        <b-row>
+          <b-col cols="auto">
+            <b-badge variant="dark" pill class="p-3">Lesson #1</b-badge>
+          </b-col>
+          <b-col class="float-left text-left">
+            <VueShowdown
+              class="text-left"
+              :markdown="
+                require(`@/assets/custom/docs/Section1/Title.md`).default
+              "
+              flavor="github"
+              :options="{ emoji: true }"
+            />
+          </b-col>
+        </b-row>
+        <br />
+        <b-row>
+          <b-col>
+            <b-card
+              class="shadow mx-1"
+              style="float: right; max-width: 50%"
+              img-src="@/assets/custom/images/city-view.png"
+            >
+              <template v-slot="footer">
+                <small class="text-muted text-left">
+                  Partial common ownership is a model for ownership. Like
+                  private ownership except assets are always for sale
+                </small>
+              </template>
+            </b-card>
+            <article class="text-left">
+              <h3>What is it?</h3>
+              Partial common ownership, as the name suggests, is a model for
+              ownership. It's a lot like private ownership but with one major
+              twist.
 
+              <a v-b-tooltip.hover.top="'Assets, land or property'">Assets</a>
+              are always for sale! Crazy right? At its core, PCO holds this
+              philosophical idea: "Assets should benefit both individuals and
+              society as a whole, not just one individual".
+              <br />
+              <h3>Why do we need it?</h3>
+              Private ownership has a few problems and partial common ownership
+              is the solution. To learn what PCO is and the problems it solves,
+              we will first explore the problems with Private Ownership. Lets
+              play some games!
+            </article>
+          </b-col>
+        </b-row>
+
+        <b-button class="float-right my-4" href="#Section2" variant="primary"
+          >Next Lesson</b-button
+        >
+        <br />
+      </div>
+    </div>
+    <div id="Section2" class="section bg-light">
+      <div class="container py-4">
+        <b-row>
+          <b-col cols="auto">
+            <b-badge variant="dark" pill class="p-3">Lesson #2</b-badge>
+          </b-col>
+          <b-col class="float-left text-left">
+            <VueShowdown
+              class="text-left"
+              :markdown="
+                require(`@/assets/custom/docs/Section2/Title.md`).default
+              "
+              flavor="github"
+              :options="{ emoji: true }"
+            />
+          </b-col>
+        </b-row>
+        <br />
+        <b-card class="float-right shadow mx-1" style="max-width: 50%">
+          <b-card-header class="p-0 m-0">
+            <b-embed
+              type="iframe"
+              aspect="4by3"
+              src="https://itch.io/embed-upload/8251302?color=333333"
+              allowfullscreen
+            ></b-embed>
+          </b-card-header>
+          <b-card-text>
+            <br />
+            <small class="text-muted">
+              <VueShowdown
+                class="text-left"
+                :markdown="
+                  require(`@/assets/custom/docs/Section2/Caption.md`).default
+                "
+                flavor="github"
+                :options="{ emoji: true }"
+              />
+            </small>
+          </b-card-text>
+        </b-card>
+        <article class="text-left">
+          <VueShowdown
+            :markdown="require(`@/assets/custom/docs/Section2/Main.md`).default"
+            flavor="github"
+            :options="{ emoji: true }"
+          />
+        </article>
+        <br />
+        <br />
+        <b-row>
+          <b-col
+            v-for="(sentiment, index) in [false, false, true]"
+            :key="index"
+          >
+            <b-card
+              :border-variant="sentiment ? 'success' : 'danger'"
+              class="mb-3"
+            >
+              <b-card-header class="bg-transparent border-0">
+                <b-avatar :variant="sentiment ? 'success' : 'danger'"
+                  ><BIconHandThumbsUpFill
+                    v-if="sentiment"
+                  ></BIconHandThumbsUpFill
+                  ><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill
+                ></b-avatar>
+              </b-card-header>
+              <br />
+              <VueShowdown
+                class="text-left"
+                :markdown="
+                  require(`@/assets/custom/docs/Section2/Item${
+                    index + 1
+                  }/Main.md`).default
+                "
+                flavor="github"
+                :options="{ emoji: true }"
+              />
+              <b-collapse
+                :id="`collapse-section2-${index}`"
+                v-model="collapse.section2[index]"
+                class="mt-2"
+              >
+                <b-alert
+                  header="Example"
+                  :variant="sentiment ? 'success' : 'danger'"
+                  show
+                >
+                  <VueShowdown
+                    class="text-left"
+                    :markdown="
+                      require(`@/assets/custom/docs/Section2/Item${
+                        index + 1
+                      }/Collapse.md`).default
+                    "
+                    flavor="github"
+                    :options="{ emoji: true }"
+                  />
+                </b-alert>
+                <br />
+              </b-collapse>
+              <b-button
+                block
+                variant="link"
+                :class="collapse.section2[index] ? null : 'collapsed'"
+                :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
+                :aria-controls="`collapse-section2-${index}`"
+                @click="toggleCollapse(2, index)"
+              >
+                <BIconCaretUpFill
+                  :class="sentiment ? 'text-success' : 'text-danger'"
+                  v-if="collapse.section2[index]"
+                ></BIconCaretUpFill>
+                <BIconCaretDownFill
+                  :class="sentiment ? 'text-success' : 'text-danger'"
+                  v-else
+                ></BIconCaretDownFill>
+              </b-button>
+            </b-card>
+          </b-col>
+        </b-row>
+        <br />
+        <b-button class="float-right my-4" href="#Section3" variant="primary"
+          >Next Lesson</b-button
+        >
+        <br />
+      </div>
+    </div>
+    <div id="Section3" class="section bg-dark text-white">
+      <div class="container py-4">
+        <b-row>
+          <b-col cols="auto">
+            <b-badge variant="light" pill class="p-3">Lesson #3</b-badge>
+          </b-col>
+          <b-col class="float-left text-left">
+            <VueShowdown
+              class="text-left"
+              :markdown="
+                require(`@/assets/custom/docs/Section3/Title.md`).default
+              "
+              flavor="github"
+              :options="{ emoji: true }"
+            />
+          </b-col>
+        </b-row>
+        <br />
+        <b-row>
+          <b-col>
+            <b-card
+              bg-variant="dark"
+              class="float-right shadow mx-1"
+              style="max-width: 50%"
+            >
+              <b-card-header class="p-0 m-0">
+                <b-embed
+                  type="iframe"
+                  aspect="4by3"
+                  src="https://itch.io/embed-upload/8251302?color=333333"
+                  allowfullscreen
+                ></b-embed>
+              </b-card-header>
+              <b-card-text>
+                <br />
+                <small>
+                  <VueShowdown
+                    class="text-left text-muted"
+                    :markdown="
+                      require(`@/assets/custom/docs/Section3/Caption.md`)
+                        .default
+                    "
+                    flavor="github"
+                    :options="{ emoji: true }"
+                  />
+                </small>
+              </b-card-text>
+            </b-card>
+            <article class="text-left">
+              <VueShowdown
+                class="text-left"
+                :markdown="
+                  require(`@/assets/custom/docs/Section3/Main.md`).default
+                "
+                flavor="github"
+                :options="{ emoji: true }"
+              />
+            </article>
+          </b-col>
+        </b-row>
+        <br />
+        <b-row>
+          <b-col v-for="(sentiment, index) in [true, true, false]" :key="index">
+            <b-card
+              bg-variant="dark"
+              :border-variant="sentiment ? 'success' : 'danger'"
+              class="mb-3"
+            >
+              <b-card-header class="bg-transparent border-0">
+                <b-avatar :variant="sentiment ? 'success' : 'danger'"
+                  ><BIconHandThumbsUpFill
+                    v-if="sentiment"
+                  ></BIconHandThumbsUpFill
+                  ><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill
+                ></b-avatar>
+              </b-card-header>
+              <br />
+              <VueShowdown
+                class="text-left"
+                :markdown="
+                  require(`@/assets/custom/docs/Section3/Item${
+                    index + 1
+                  }/Main.md`).default
+                "
+                flavor="github"
+                :options="{ emoji: true }"
+              />
+              <b-collapse
+                :id="`collapse-section2-${index}`"
+                v-model="collapse.section2[index]"
+                class="mt-2"
+              >
+                <b-alert
+                  header="Example"
+                  :variant="sentiment ? 'success' : 'danger'"
+                  show
+                >
+                  <VueShowdown
+                    class="text-left"
+                    :markdown="
+                      require(`@/assets/custom/docs/Section3/Item${
+                        index + 1
+                      }/Collapse.md`).default
+                    "
+                    flavor="github"
+                    :options="{ emoji: true }"
+                  />
+                </b-alert>
+                <br />
+              </b-collapse>
+              <b-button
+                block
+                variant="link"
+                :class="collapse.section2[index] ? null : 'collapsed'"
+                :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
+                :aria-controls="`collapse-section2-${index}`"
+                @click="toggleCollapse(2, index)"
+              >
+                <BIconCaretUpFill
+                  :class="sentiment ? 'text-success' : 'text-danger'"
+                  v-if="collapse.section2[index]"
+                ></BIconCaretUpFill>
+                <BIconCaretDownFill
+                  :class="sentiment ? 'text-success' : 'text-danger'"
+                  v-else
+                ></BIconCaretDownFill>
+              </b-button>
+            </b-card>
+          </b-col>
+        </b-row>
+        <b-button class="float-right my-4" href="#Section4" variant="primary"
+          >Next Lesson</b-button
+        >
+        <br />
+      </div>
+    </div>
+    <div id="Section4" class="section position-relative p-0 text-white">
+      <div class="pattern-hamburger">
+        <div class="container py-4">
+          <b-row>
+            <b-col cols="auto">
+              <b-badge variant="light" pill class="p-3">Lesson #4</b-badge>
+            </b-col>
+            <b-col class="float-left text-left">
+              <VueShowdown
+                class="text-left"
+                :markdown="
+                  require(`@/assets/custom/docs/Section4/Title.md`).default
+                "
+                flavor="github"
+                :options="{ emoji: true }"
+              />
+            </b-col>
+          </b-row>
+          <br />
+          <b-row>
+            <b-col>
+              <b-card
+                overlay
+                bg-variant="dark"
+                class="shadow float-right mx-1"
+                style="max-width: 50%"
+                img-src="@/assets/custom/images/storefront.png"
+              >
+                <b-alert class="text-dark" show>
+                  <span style="opacity: 1">
+                    Hi, I'm Ahmed. This is my Hamburger shop. My honest and true
+                    value for this shop is $500K.
+                  </span>
+                </b-alert>
+              </b-card>
+              <article class="text-left">
+                In the game, there was a tax that owners paid continually at a
+                rate of 10% per year based on their valuation of their property.
+                This mechanism is called Harberger Taxation.
+
+                <h3>Harberger Taxation:</h3>
+                <br />
+                <ul>
+                  <li>
+                    Owners must pay an X% tax based on their self-assessed value
+                  </li>
+                  <li>Owners must sell at their self-assessed value</li>
+                </ul>
+
+                If you must sell at your self-assessed value and the
+                <a
+                  v-b-tooltip.hover.top="
+                    'the demand for assets like yours is high!'
+                  "
+                  >turnover rate</a
+                >
+                of assets is high, then you could set a higher price. It's
+                important you see these two act in opposite directions...
+              </article>
+            </b-col>
+          </b-row>
+          <br />
+          <b-row>
+            <b-col>
+              <ScenarioGenerator></ScenarioGenerator>
+            </b-col>
+          </b-row>
+
+          <br />
+
+          <b-row>
+            <b-col
+              v-for="(sentiment, index) in [true, true, false]"
+              :key="index"
+            >
+              <b-card
+                bg-variant="dark"
+                :border-variant="sentiment ? 'success' : 'danger'"
+                class="mb-3"
+              >
+                <b-card-header class="bg-transparent border-0">
+                  <b-avatar :variant="sentiment ? 'success' : 'danger'"
+                    ><BIconHandThumbsUpFill
+                      v-if="sentiment"
+                    ></BIconHandThumbsUpFill
+                    ><BIconHandThumbsDownFill v-else></BIconHandThumbsDownFill
+                  ></b-avatar>
+                </b-card-header>
+                <br />
+                <VueShowdown
+                  class="text-left"
+                  :markdown="
+                    require(`@/assets/custom/docs/Section4/Item${
+                      index + 1
+                    }/Main.md`).default
+                  "
+                  flavor="github"
+                  :options="{ emoji: true }"
+                />
+                <b-collapse
+                  :id="`collapse-section2-${index}`"
+                  v-model="collapse.section2[index]"
+                  class="mt-2"
+                >
+                  <b-alert
+                    header="Example"
+                    :variant="sentiment ? 'success' : 'danger'"
+                    show
+                  >
+                    <VueShowdown
+                      class="text-left"
+                      :markdown="
+                        require(`@/assets/custom/docs/Section4/Item${
+                          index + 1
+                        }/Collapse.md`).default
+                      "
+                      flavor="github"
+                      :options="{ emoji: true }"
+                    />
+                  </b-alert>
+                  <br />
+                </b-collapse>
+                <b-button
+                  block
+                  variant="link"
+                  :class="collapse.section2[index] ? null : 'collapsed'"
+                  :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
+                  :aria-controls="`collapse-section2-${index}`"
+                  @click="toggleCollapse(2, index)"
+                >
+                  <BIconCaretUpFill
+                    :class="sentiment ? 'text-success' : 'text-danger'"
+                    v-if="collapse.section2[index]"
+                  ></BIconCaretUpFill>
+                  <BIconCaretDownFill
+                    :class="sentiment ? 'text-success' : 'text-danger'"
+                    v-else
+                  ></BIconCaretDownFill>
+                </b-button>
+              </b-card>
+            </b-col>
+          </b-row>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div id="Section5" class="section bg-light">
+      <div class="container py-4">
+        <b-row>
+          <b-col class="float-left text-left">
+            <VueShowdown
+              class="text-left"
+              :markdown="
+                require(`@/assets/custom/docs/Section5/Title.md`).default
+              "
+              flavor="github"
+              :options="{ emoji: true }"
+            />
+          </b-col>
+        </b-row>
+        <br />
+        <b-row>
+          <b-col v-for="(x, index) in [, , ,]" :key="'usecases-' + index">
+            <b-card
+              v-if="index < 3"
+              bg-variant="light"
+              border-variant="info"
+              class="mb-3"
+            >
+              <VueShowdown
+                class="text-left"
+                :markdown="
+                  require(`@/assets/custom/docs/Section5/Item${
+                    index + 1
+                  }/Main.md`).default
+                "
+                flavor="github"
+                :options="{ emoji: true }"
+              />
+              <b-collapse
+                :id="`collapse-section5-${index}`"
+                v-model="collapse.section5[index]"
+                class="mt-2"
+              >
+                <VueShowdown
+                  class="text-left"
+                  :markdown="
+                    require(`@/assets/custom/docs/Section5/Item${
+                      index + 1
+                    }/Collapse.md`).default
+                  "
+                  flavor="github"
+                  :options="{ emoji: true }"
+                />
+                <br />
+              </b-collapse>
+              <b-button
+                block
+                variant="link"
+                :class="collapse.section5[index] ? null : 'collapsed'"
+                :aria-expanded="collapse.section5[index] ? 'true' : 'false'"
+                :aria-controls="`collapse-section5-${index}`"
+                @click="toggleCollapse(5, index)"
+              >
+                <BIconCaretUpFill
+                  class="info"
+                  v-if="collapse.section5[index]"
+                ></BIconCaretUpFill>
+                <BIconCaretDownFill class="info" v-else></BIconCaretDownFill>
+              </b-button>
+            </b-card>
+          </b-col>
+        </b-row>
+      </div>
+    </div>
+    <div id="Section6" class="section bg-white">
+      <div class="container py-4">
+        <b-row>
+          <b-col class="float-left text-left">
+            <VueShowdown
+              class="text-left"
+              :markdown="
+                require(`@/assets/custom/docs/Section6/Title.md`).default
+              "
+              flavor="github"
+              :options="{ emoji: true }"
+            />
+          </b-col>
+        </b-row>
+        <div class="accordion" role="tablist">
+          <div v-for="(q, index) in FAQs" :key="`faqs-` + index">
+            <b-card no-body class="mb-1">
+              <b-card-header header-tag="header" class="p-1" role="tab">
+                <b-button
+                  block
+                  v-b-toggle="`accordion-${index + 1}`"
+                  variant="primary"
+                >
+                  <h3>
+                    <VueShowdown
+                      class="text-center"
+                      :markdown="
+                        require(`@/assets/custom/docs/Section6/Question${
+                          index + 1
+                        }/Question.md`).default
+                      "
+                      flavor="github"
+                      :options="{ emoji: true }"
+                    />
+                  </h3>
+                </b-button>
+              </b-card-header>
+              <b-collapse
+                :id="`accordion-${index + 1}`"
+                :accordion="`accordion-${index + 1}`"
+                role="tabpanel"
+              >
+                <b-card-body>
+                  <b-card-text
+                    ><VueShowdown
+                      class="text-left"
+                      :markdown="
+                        require(`@/assets/custom/docs/Section6/Question${
+                          index + 1
+                        }/Answer.md`).default
+                      "
+                      flavor="github"
+                      :options="{ emoji: true }"
+                  /></b-card-text>
+                </b-card-body>
+              </b-collapse>
+            </b-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-import {BIconHandThumbsDownFill, BIconHandThumbsUpFill, BIconCaretDownFill, BIconCaretUpFill } from 'bootstrap-vue'
-import ScenarioGenerator from '@/components/ScenarioGenerator.vue'
+import {
+  BIconHandThumbsDownFill,
+  BIconHandThumbsUpFill,
+  BIconCaretDownFill,
+  BIconCaretUpFill,
+} from "bootstrap-vue";
+import ScenarioGenerator from "@/components/ScenarioGenerator.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     BIconHandThumbsDownFill,
     BIconHandThumbsUpFill,
     BIconCaretDownFill,
     BIconCaretUpFill,
-    ScenarioGenerator
-    
+    ScenarioGenerator,
   },
-  data () {
+  data() {
     return {
-        // The number of FAQ questions
-        FAQs: 2,
-        collapse: {
-            // Whether or not the collapse starts open
-            section2: [false, false, false],
-            section5: [false, false, false],
-        }
-    }
+      // The number of FAQ questions
+      FAQs: 2,
+      collapse: {
+        // Whether or not the collapse starts open
+        section2: [false, false, false],
+        section5: [false, false, false],
+      },
+    };
   },
   methods: {
-    toggleCollapse (section, index) {
-        this.$set(this.collapse["section"+section], index.toString(), !this.collapse["section"+section][index])
-    }
-  }
-}
+    toggleCollapse(section, index) {
+      this.$set(
+        this.collapse["section" + section],
+        index.toString(),
+        !this.collapse["section" + section][index]
+      );
+    },
+  },
+};
 </script>

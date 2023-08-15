@@ -1,129 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rubik&display=swap");
 // The background color of the body
-$body-bg:#050f19;
+$body-bg: #050f19;
 
 // $light: #cbcbcb;
- $primary: #1d66b3;//#1f1c1d;
- $dark: #050f19;//#e7b8c1;
+$primary: #1d66b3; //#1f1c1d;
+$dark: #050f19; //#e7b8c1;
+$light-text: #f3f3f3; //#e7b8c1;
 // $secondary: #fbbcd4;
 // $success: #c3d77e;
 // $warning: #fae68f;
-html, body, #app {
-    font-family: 'Rubik', sans-serif;
+html,
+body,
+#app {
+  font-family: "Rubik", sans-serif;
 }
 
-article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
-    display: inline-block;
+article .h1,
+article .h2,
+article .h3,
+article .h4,
+article .h5,
+article .h6 {
+  display: inline-block;
 }
 
 a {
-    font-weight: bold;
-    color: $primary !important;
+  font-weight: bold;
+  color: $primary !important;
 
-    &.router-link-exact-active {
-      color: $primary !important;
-    }
+  &.router-link-exact-active {
+    color: $primary !important;
+  }
 }
 
 #header {
-    max-width: 1500px;
-    min-width: 500px;
-    overflow: hidden;
+  max-width: 1500px;
+  //   min-width: 500px; // TODO
+  overflow: hidden;
 }
 
 .btn-primary {
-    color: white !important;
+  color: white !important;
 }
 
 .blur {
-    backdrop-filter: blur(5px); 
-    border-radius: 5px; 
-    border: white 1px;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  border: white 1px;
 }
 .pattern {
-    position: relative;
+  position: relative;
 }
 .pattern:before {
-    content: "";
-    position: absolute;
-    top: -200%;
-    left: -200%;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
-    transform: rotate(30deg);
-    opacity: 30%;
-    background-size: 200px 200px;
-    background-blend-mode: lighten;
+  content: "";
+  position: absolute;
+  width: 500%;
+  height: 500%;
+  top: -100%;
+  left: -100%;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
+  transform: rotate(30deg);
+  opacity: 30%;
+  background-size: 200px 200px;
+  background-blend-mode: lighten;
 }
 #footer {
-    position: relative;
-    overflow: hidden;
-    max-width: 1500px;
-    min-width: 500px;
-    margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  max-width: 1500px;
+  //   min-width: 500px; // TODO
+  margin: 0 auto;
 }
 #footer .pattern:before {
-    content: "";
-    position: absolute;
-    top: -1000%;
-    left: -100%;
-    bottom: 0%;
-    right: -10%;
-    z-index: -1;
-    background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
-    transform: rotate(30deg);
-    opacity: 30%;
-    background-size: 200px 200px;
-    background-blend-mode: lighten;
+  content: "";
+  position: absolute;
+  top: -1000%;
+  left: -100%;
+  bottom: 0%;
+  right: -10%;
+  z-index: -1;
+  background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
+  transform: rotate(30deg);
+  opacity: 30%;
+  background-size: 200px 200px;
+  background-blend-mode: lighten;
 }
 
-.display-3, .display-4, .display-5, h1, h2 {
-    font-family: 'Fugaz One', cursive;  
-
+.display-3,
+.display-4,
+.display-5,
+h1,
+h2 {
+  font-family: "Fugaz One", cursive;
 }
 h1 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-
 .section {
-    margin: 0px auto;
-    padding: 40px 0;
-    min-width: 500px;
-    max-width: 1500px;
-    overflow-x: hidden;
+  margin: 0px auto;
+  padding: 40px 0;
+  //   min-width: 500px; // TODO
+  max-width: 1500px;
+  overflow-x: hidden;
 }
 
 #Section2 {
-    background-color: rgb(40, 40, 40);
+  background-color: rgb(40, 40, 40);
 }
 .pattern-hamburger {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .pattern-hamburger:before {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: -300%;
-    right: 0%;
-    bottom: -300%;
-    z-index: -1;
-    background: url("@/assets/custom/images/Hamburger.png") 0 0 repeat;
-    transform: rotate(-30deg);
-    opacity: 20%;
-    background-size: 100px 100px;
-    background-blend-mode: multiply;
-    transform-origin:top left;
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -300%;
+  right: 0%;
+  bottom: -300%;
+  z-index: -1;
+  background: url("@/assets/custom/images/Hamburger.png") 0 0 repeat;
+  transform: rotate(-30deg);
+  opacity: 20%;
+  background-size: 100px 100px;
+  background-blend-mode: multiply;
+  transform-origin: top left;
 }
 
 #Footer {
-    background-color: rgb(17, 18, 36);
+  background-color: rgb(17, 18, 36);
 }
 
+.TitleText {
+  color: $light-text;
+  font-size: 4rem;
+}
+.TitleTextSub {
+  color: $light-text;
+  font-size: 1.8rem;
+}
 /**
 
 */
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
 
+@media (max-width: $breakpoint-xl) {
+}
+
+@media (max-width: $breakpoint-lg) {
+}
+@media (max-width: $breakpoint-md) {
+  .TitleText {
+    font-size: 3rem;
+  }
+}
+@media (max-width: $breakpoint-sm) {
+  .TitleText {
+    font-size: 2.5rem;
+  }
+  .TitleTextSub {
+    font-size: 1.4rem;
+  }
+}
