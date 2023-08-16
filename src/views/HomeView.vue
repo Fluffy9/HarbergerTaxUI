@@ -277,7 +277,6 @@
             </p>
           </article>
 
-          <!-- <b-col class="section3-game"> -->
           <b-card class="float-right shadow mx-1 section3-game">
             <b-card-header class="p-0 m-0">
               <b-embed
@@ -295,44 +294,6 @@
             </b-card-text>
           </b-card>
           <br />
-          <!-- <b-card
-            bg-variant="dark"
-            class="float-right shadow mx-1"
-            style="max-width: 50%"
-          >
-            <b-card-header class="p-0 m-0">
-              <b-embed
-                type="iframe"
-                aspect="4by3"
-                src="https://itch.io/embed-upload/8251302?color=333333"
-                allowfullscreen
-              ></b-embed>
-            </b-card-header>
-            <b-card-text>
-              <br />
-              <small>
-                <VueShowdown
-                  class="text-left text-muted"
-                  :markdown="
-                    require(`@/assets/custom/docs/Section3/Caption.md`).default
-                  "
-                  flavor="github"
-                  :options="{ emoji: true }"
-                />
-              </small>
-            </b-card-text>
-          </b-card> -->
-          <!-- <article class="text-left">
-              <VueShowdown
-                class="text-left"
-                :markdown="
-                  require(`@/assets/custom/docs/Section3/Main.md`).default
-                "
-                flavor="github"
-                :options="{ emoji: true }"
-              />
-            </article> -->
-          <!-- </b-col> -->
         </b-row>
         <br />
         <b-row class="section3-dropdowns">
