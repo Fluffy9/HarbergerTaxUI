@@ -143,10 +143,18 @@ h1 {
   transform: translateX(-50%);
 }
 
-.burger-wrapper {
-  border: 5px solid black;
+.scenario-slider,
+.scenario-burger {
+  background: transparent !important;
+}
+.scenario-slider .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  height: 500px;
+.burger-wrapper {
+  height: 350px;
   width: 500px;
   .Tooltip {
     text-decoration: underline;

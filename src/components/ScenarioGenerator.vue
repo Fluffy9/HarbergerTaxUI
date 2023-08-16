@@ -9,44 +9,6 @@
     "
   >
     <h2 class="text-white text-left">Scenario Generator</h2>
-    <div class="burger-bottom" style="border: 5px solid black"></div>
-    <div class="burger-wrapper">
-      <div
-        class="burger-top"
-        :style="{ height: chartData.datasets[0].data + 'px' }"
-      >
-        <a
-          v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
-          class="Tooltip Tooltip-Arrow-Down"
-          >Tax rate</a
-        >
-      </div>
-
-      <div class="burger-middle-2 Tooltip" :style="{ height: 10 + 'px' }"></div>
-      <div
-        class="burger-middle"
-        :style="{
-          height: chartData.datasets[1].data - 10 + 'px',
-        }"
-        v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
-      >
-        <a class="Tooltip">
-          Ahmed's SAV: {{ Math.round(1000 * (0.5 + adjustmentPercentage)) }} K
-        </a>
-      </div>
-      <div
-        class="burger-bottom"
-        :style="{
-          height: chartData.datasets[2].data + 'px',
-        }"
-      >
-        <a
-          v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
-          class="Tooltip Tooltip-Arrow-Up"
-          >Turnover rate</a
-        >
-      </div>
-    </div>
 
     <br />
     <b-alert variant="primary" :show="Boolean(activeCase['id'])">
@@ -94,22 +56,8 @@
     <br />
     <br />
     <b-card-group>
-      <b-card>
-        <Bar
-          id="hamburger-chart"
-          :options="HamburgerChart.chartOptions"
-          :data="chartData"
-        ></Bar>
-        <!-- <Bar
-                id="my-chart-id"
-                :options="chartOptions"
-                :data="chartData"
-                />                 -->
-      </b-card>
-      <b-card>
+      <b-card class="scenario-slider">
         <b-form-group
-          label-cols-lg="3"
-          label="Sliding Scales"
           label-size="lg"
           label-class="font-weight-bold pt-0"
           class="mb-0"
@@ -148,7 +96,7 @@
             ></b-form-input>
           </b-form-group>
           <!-- <div style="display: none;"> -->
-          <div>
+          <!-- <div>
             Adjustment Percentage: <br />
             {{ adjustmentPercentage }} = (({{
               this.SlidingScale.TurnoverRate
@@ -164,8 +112,55 @@
             <br />{{ chartData.datasets[2].data }}= (100 - 10)*(0.5+{{
               adjustmentPercentage
             }})
-          </div>
+          </div> -->
         </b-form-group>
+      </b-card>
+      <b-card class="scenario-slider">
+        <div class="burger-wrapper">
+          <div
+            class="burger-top"
+            :style="{ height: chartData.datasets[0].data + 'px' }"
+          >
+            <a
+              v-b-tooltip.hover.top="
+                'the demand for assets like yours is high!'
+              "
+              class="Tooltip Tooltip-Arrow-Down"
+              >Tax rate</a
+            >
+          </div>
+
+          <div
+            class="burger-middle-2 Tooltip"
+            :style="{ height: 10 + 'px' }"
+          ></div>
+          <div
+            class="burger-middle"
+            :style="{
+              height: chartData.datasets[1].data - 10 + 'px',
+            }"
+            v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
+          >
+            <a class="Tooltip">
+              Ahmed's SAV:
+              {{ Math.round(1000 * (0.5 + adjustmentPercentage)) }} K
+            </a>
+          </div>
+          <div
+            class="burger-bottom"
+            :style="{
+              height: chartData.datasets[2].data + 'px',
+            }"
+          >
+            <a
+              v-b-tooltip.hover.top="
+                'the demand for assets like yours is high!'
+              "
+              class="Tooltip Tooltip-Arrow-Up"
+              >Turnover rate</a
+            >
+          </div>
+        </div>
       </b-card>
       <br />
       <b-row>
@@ -311,8 +306,8 @@ export default {
     },
     chartData() {
       let middle = 50;
-      let bottom = (500 - middle) * (0.5 + this.adjustmentPercentage);
-      let top = 500 - middle - bottom;
+      let bottom = (350 - middle) * (0.5 + this.adjustmentPercentage);
+      let top = 350 - middle - bottom;
       console.log(`Top: ${top}, Middle: ${middle}, Bottom: ${bottom}`);
       return {
         labels: ["Percentage"],
