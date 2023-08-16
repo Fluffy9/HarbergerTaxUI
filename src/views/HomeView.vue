@@ -108,39 +108,55 @@
           </b-col>
         </b-row>
         <br />
-        <b-card class="float-right shadow mx-1" style="max-width: 50%">
-          <b-card-header class="p-0 m-0">
-            <b-embed
-              type="iframe"
-              aspect="4by3"
-              src="https://itch.io/embed-upload/8251302?color=333333"
-              allowfullscreen
-            ></b-embed>
-          </b-card-header>
-          <b-card-text>
+        <b-row class="section2-flex">
+          <article class="text-left section2-art1">
+            <h3>How does Private Ownership work?</h3>
+            <p>
+              Governments sell plots of land to raise money and encourage
+              economic growth, which in turn improves the living standards of
+              society as a whole.
+            </p>
+            <p>If you buy a plot of land, you get three main benefits:</p>
+            <ul class="letter-list">
+              <li><p>The right to use the land</p></li>
+              <li><p>The right to exclude others from using it</p></li>
+              <li><p>The right to sell it whenever you want</p></li>
+            </ul>
             <br />
-            <small class="text-muted">
-              <VueShowdown
-                class="text-left"
-                :markdown="
-                  require(`@/assets/custom/docs/Section2/Caption.md`).default
-                "
-                flavor="github"
-                :options="{ emoji: true }"
-              />
-            </small>
-          </b-card-text>
-        </b-card>
-        <article class="text-left">
-          <VueShowdown
-            :markdown="require(`@/assets/custom/docs/Section2/Main.md`).default"
-            flavor="github"
-            :options="{ emoji: true }"
-          />
-        </article>
+            <h3>Okay, so what's the problem?</h3>
+            <p>
+              Part <span class="inline-blue">c</span> is important here. If you
+              decide to buy land but leave it unused, it prevents others from
+              building useful things like businesses, parks, or museums that
+              could benefit society.
+            </p>
+            <p>
+              In this example, your plot of land is unproductive. The land could
+              produce more benefit for society if it was owned by someone else.
+            </p>
+            <p>Play this game to understand the limits of Private Ownership.</p>
+          </article>
+
+          <b-card class="float-right shadow mx-1 section2-game">
+            <b-card-header class="p-0 m-0">
+              <b-embed
+                type="iframe"
+                aspect="4by3"
+                src="https://itch.io/embed-upload/8251302?color=333333"
+                allowfullscreen
+              ></b-embed>
+            </b-card-header>
+            <b-card-text>
+              <br />
+              <small class="text-muted">
+                <p class="text-muted-p2">Click the icon to make full screen.</p>
+              </small>
+            </b-card-text>
+          </b-card>
+        </b-row>
         <br />
         <br />
-        <b-row>
+        <b-row section2-dropdowns>
           <b-col
             v-for="(sentiment, index) in [false, false, true]"
             :key="index"

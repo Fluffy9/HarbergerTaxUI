@@ -6,6 +6,7 @@ $body-bg: #050f19;
 $primary: #1d66b3; //#1f1c1d;
 $dark: #050f19; //#e7b8c1;
 $light-text: #f3f3f3; //#e7b8c1;
+$dark-text: #2c3e50;
 // $secondary: #fbbcd4;
 // $success: #c3d77e;
 // $warning: #fae68f;
@@ -31,29 +32,6 @@ a {
   &.router-link-exact-active {
     color: $primary !important;
   }
-}
-
-.shadow.mx-1.custom-card-1 {
-  background-color: lightgray;
-  align-items: center;
-  width: 500px;
-  margin-right: 0 !important;
-  margin-left: 1rem !important;
-
-  img {
-    // width: 480px;
-    // height: 480px;
-    padding: 1rem;
-  }
-  .card-body {
-    background-color: white;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-}
-
-.Tooltip {
-  text-decoration: underline;
 }
 
 #header {
@@ -131,8 +109,81 @@ h1 {
   overflow-x: hidden;
 }
 
+.shadow.mx-1 {
+  align-items: center;
+  width: 500px;
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+}
+
+#Section1 {
+  .shadow.mx-1.custom-card-1 {
+    background-color: lightgray;
+
+    img {
+      // width: 480px;
+      // height: 480px;
+      padding: 1rem;
+    }
+    .card-body {
+      background-color: white;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .Tooltip {
+    text-decoration: underline;
+  }
+}
+
 #Section2 {
   background-color: rgb(40, 40, 40);
+  .letter-list {
+    list-style-type: lower-alpha; /* Use 'upper-alpha' for uppercase letters */
+    color: $primary;
+    font-weight: 700;
+    p {
+      color: $dark-text;
+      font-weight: normal;
+    }
+  }
+  .inline-blue {
+    color: $primary;
+    font-weight: 700;
+  }
+  .mx-1 .card-body {
+    width: 100%;
+    padding: 0;
+  }
+  .embed-responsive {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 300px;
+  }
+
+  .text-muted p {
+    padding-inline: 20px;
+  }
+  .text-muted-p2 {
+    padding-bottom: 10px;
+  }
+
+  .section2-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .section2-game {
+    width: 500px;
+    height: fit-content;
+    align-self: center;
+  }
+  .section2-art1 {
+    width: 53%;
+    padding: 15px;
+  }
+  .section2-art2 {
+  }
 }
 .pattern-hamburger {
   position: relative;
@@ -176,6 +227,19 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
 @media (max-width: $breakpoint-xl) {
+  #Section2 {
+    .section2-flex {
+      display: flex;
+      justify-content: center;
+    }
+    .section2-game {
+      width: 500px;
+      height: fit-content;
+    }
+    .section2-art1 {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: $breakpoint-lg) {
@@ -184,21 +248,23 @@ $breakpoint-xl: 1200px;
   }
 }
 @media (max-width: $breakpoint-md) {
-  .shadow.mx-1.custom-card-1 {
-    width: 300px;
-    margin-left: 0 !important;
-    .card-body {
-      display: none;
+  #Section1 {
+    .shadow.mx-1.custom-card-1 {
+      width: 300px;
+      margin-left: 0 !important;
+      .card-body {
+        display: none;
+      }
     }
-  }
-  .lesson1-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-  }
-  .TitleText {
-    font-size: 3rem;
+    .lesson1-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .TitleText {
+      font-size: 3rem;
+    }
   }
 }
 @media (max-width: $breakpoint-sm) {
@@ -207,5 +273,10 @@ $breakpoint-xl: 1200px;
   }
   .TitleTextSub {
     font-size: 1.4rem;
+  }
+  #Section2 {
+    .embed-responsive {
+      height: 250px;
+    }
   }
 }
