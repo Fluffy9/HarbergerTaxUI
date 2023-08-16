@@ -117,6 +117,73 @@ h1 {
   margin-left: 1rem !important;
 }
 
+// Burger dynamic
+.Tooltip {
+  position: relative;
+}
+
+.Tooltip-Arrow-Up::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+  transform: translateX(-50%);
+}
+.Tooltip-Arrow-Down::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+.burger-wrapper {
+  border: 5px solid black;
+
+  height: 500px;
+  width: 500px;
+  .Tooltip {
+    text-decoration: underline;
+    color: $light-text !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+}
+.burger-top {
+  background-color: #d17d00;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.burger-middle-2 {
+  background-color: #ffce00;
+}
+.burger-middle {
+  background-color: #603813;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    color: $light-text;
+  }
+}
+.burger-bottom {
+  background-color: #d17d00;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 // UL - Letters instead of dots
 .letter-list {
   list-style-type: lower-alpha; /* Use 'upper-alpha' for uppercase letters */
