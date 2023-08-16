@@ -1,1 +1,1 @@
-Private Ownership has high investment efficiency. 
+Private Ownership has <b>high investment efficiency</b>.

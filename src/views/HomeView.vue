@@ -156,7 +156,7 @@
         </b-row>
         <br />
         <br />
-        <b-row section2-dropdowns>
+        <b-row class="section2-dropdowns">
           <b-col
             v-for="(sentiment, index) in [false, false, true]"
             :key="index"

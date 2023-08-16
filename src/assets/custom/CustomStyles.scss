@@ -239,12 +239,20 @@ $breakpoint-xl: 1200px;
     .section2-art1 {
       width: 100%;
     }
+    .shadow.mx-1 {
+      margin-inline: 15px !important;
+    }
   }
 }
 
 @media (max-width: $breakpoint-lg) {
   .shadow.mx-1.custom-card-1 {
     width: 300px;
+  }
+  #Section2 {
+    .section2-dropdowns {
+      flex-direction: column;
+    }
   }
 }
 @media (max-width: $breakpoint-md) {

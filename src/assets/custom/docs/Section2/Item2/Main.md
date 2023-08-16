@@ -1,1 +1,1 @@
-Private Ownership has an investor hoarding problem.
+Private Ownership has an <b>investor hoarding problem</b>.
