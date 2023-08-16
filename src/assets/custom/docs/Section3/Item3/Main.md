@@ -1,1 +1,1 @@
-Partial Common Ownership has  reduced investment efficiency.
+Partial Common Ownership has <b>reduced investment efficiency</b>.

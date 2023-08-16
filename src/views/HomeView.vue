@@ -131,8 +131,9 @@
               could benefit society.
             </p>
             <p>
-              In this example, your plot of land is unproductive. The land could
-              produce more benefit for society if it was owned by someone else.
+              In the example above, your plot of land is unproductive. The land
+              could produce more benefit for society if it was owned by someone
+              else.
             </p>
             <p>Play this game to understand the limits of Private Ownership.</p>
           </article>
@@ -252,37 +253,76 @@
           </b-col>
         </b-row>
         <br />
-        <b-row>
-          <b-col>
-            <b-card
-              bg-variant="dark"
-              class="float-right shadow mx-1"
-              style="max-width: 50%"
-            >
-              <b-card-header class="p-0 m-0">
-                <b-embed
-                  type="iframe"
-                  aspect="4by3"
-                  src="https://itch.io/embed-upload/8251302?color=333333"
-                  allowfullscreen
-                ></b-embed>
-              </b-card-header>
-              <b-card-text>
-                <br />
-                <small>
-                  <VueShowdown
-                    class="text-left text-muted"
-                    :markdown="
-                      require(`@/assets/custom/docs/Section3/Caption.md`)
-                        .default
-                    "
-                    flavor="github"
-                    :options="{ emoji: true }"
-                  />
-                </small>
-              </b-card-text>
-            </b-card>
-            <article class="text-left">
+        <b-row class="section3-flex">
+          <article class="section3-article text-left">
+            <p>
+              Governments sell plots of land to raise money and encourage
+              economic growth, which in turn improves the living standards of
+              society as a whole.
+            </p>
+            <p>If you buy a plot of land, you get two main benefits:</p>
+            <ul class="letter-list">
+              <li><p>The right to use the land</p></li>
+              <li><p>The right to exclude others from using it</p></li>
+            </ul>
+            <br />
+
+            <p>
+              The big difference is that all plots of land must always have a
+              for-sale price.
+            </p>
+            <p>
+              Play the game to see how this improves the allocation of land and
+              the well-being of everyone.
+            </p>
+          </article>
+
+          <!-- <b-col class="section3-game"> -->
+          <b-card class="float-right shadow mx-1 section3-game">
+            <b-card-header class="p-0 m-0">
+              <b-embed
+                type="iframe"
+                aspect="4by3"
+                src="https://itch.io/embed-upload/8251302?color=333333"
+                allowfullscreen
+              ></b-embed>
+            </b-card-header>
+            <b-card-text>
+              <br />
+              <small class="text-muted">
+                <p class="text-muted-p2">Click the icon to make full screen.</p>
+              </small>
+            </b-card-text>
+          </b-card>
+          <br />
+          <!-- <b-card
+            bg-variant="dark"
+            class="float-right shadow mx-1"
+            style="max-width: 50%"
+          >
+            <b-card-header class="p-0 m-0">
+              <b-embed
+                type="iframe"
+                aspect="4by3"
+                src="https://itch.io/embed-upload/8251302?color=333333"
+                allowfullscreen
+              ></b-embed>
+            </b-card-header>
+            <b-card-text>
+              <br />
+              <small>
+                <VueShowdown
+                  class="text-left text-muted"
+                  :markdown="
+                    require(`@/assets/custom/docs/Section3/Caption.md`).default
+                  "
+                  flavor="github"
+                  :options="{ emoji: true }"
+                />
+              </small>
+            </b-card-text>
+          </b-card> -->
+          <!-- <article class="text-left">
               <VueShowdown
                 class="text-left"
                 :markdown="
@@ -291,11 +331,11 @@
                 flavor="github"
                 :options="{ emoji: true }"
               />
-            </article>
-          </b-col>
+            </article> -->
+          <!-- </b-col> -->
         </b-row>
         <br />
-        <b-row>
+        <b-row class="section3-dropdowns">
           <b-col v-for="(sentiment, index) in [true, true, false]" :key="index">
             <b-card
               bg-variant="dark"

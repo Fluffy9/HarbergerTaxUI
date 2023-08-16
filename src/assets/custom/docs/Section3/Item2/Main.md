@@ -1,1 +1,1 @@
-Partial Common Ownership reduces the investor hoarding problem.
+Partial Common Ownership reduces the <b>investor hoarding problem</b>.

@@ -1,1 +1,1 @@
-Partial Common Ownership has high allocatable efficiency.
+Partial Common Ownership has <b>high allocative efficiency</b>.

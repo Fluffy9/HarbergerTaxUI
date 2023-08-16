@@ -6,7 +6,8 @@ $body-bg: #050f19;
 $primary: #1d66b3; //#1f1c1d;
 $dark: #050f19; //#e7b8c1;
 $light-text: #f3f3f3; //#e7b8c1;
-$dark-text: #2c3e50;
+$dark-text: #2b3d4f;
+$dark-text2: #89c2fa;
 // $secondary: #fbbcd4;
 // $success: #c3d77e;
 // $warning: #fae68f;
@@ -116,6 +117,36 @@ h1 {
   margin-left: 1rem !important;
 }
 
+// UL - Letters instead of dots
+.letter-list {
+  list-style-type: lower-alpha; /* Use 'upper-alpha' for uppercase letters */
+  color: $primary;
+  font-weight: 700;
+  font-size: 1.2rem;
+  p {
+    font-weight: normal;
+    font-size: 1rem;
+  }
+}
+
+// Blue Text in line
+.inline-blue {
+  color: $primary;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+// add correct padding to image caption text
+.text-muted-p2 {
+  padding-bottom: 10px;
+}
+
+.embed-responsive {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 300px;
+}
+
 #Section1 {
   .shadow.mx-1.custom-card-1 {
     background-color: lightgray;
@@ -139,39 +170,22 @@ h1 {
 
 #Section2 {
   background-color: rgb(40, 40, 40);
-  .letter-list {
-    list-style-type: lower-alpha; /* Use 'upper-alpha' for uppercase letters */
-    color: $primary;
-    font-weight: 700;
-    p {
-      color: $dark-text;
-      font-weight: normal;
-    }
+  .letter-list p {
+    color: $dark-text;
   }
-  .inline-blue {
-    color: $primary;
-    font-weight: 700;
-  }
+
   .mx-1 .card-body {
     width: 100%;
     padding: 0;
   }
-  .embed-responsive {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 300px;
-  }
-
   .text-muted p {
     padding-inline: 20px;
-  }
-  .text-muted-p2 {
-    padding-bottom: 10px;
   }
 
   .section2-flex {
     display: flex;
     justify-content: space-between;
+    padding-inline: 15px;
   }
   .section2-game {
     width: 500px;
@@ -180,11 +194,40 @@ h1 {
   }
   .section2-art1 {
     width: 53%;
-    padding: 15px;
   }
   .section2-art2 {
   }
 }
+
+#Section3 {
+  .section3-flex {
+    flex-wrap: nowrap;
+    padding-inline: 15px;
+    justify-content: space-between;
+  }
+  .section3-article {
+    width: 53%;
+  }
+  .section3-game {
+    width: 500px;
+    height: fit-content;
+    align-self: center;
+    margin-left: 0 !important;
+    max-width: 100%;
+  }
+  .mx-1 .card-body {
+    width: 100%;
+    padding: 0;
+  }
+
+  .letter-list {
+    color: $dark-text2;
+    p {
+      color: $light-text;
+    }
+  }
+}
+
 .pattern-hamburger {
   position: relative;
   overflow: hidden;
@@ -240,6 +283,23 @@ $breakpoint-xl: 1200px;
       width: 100%;
     }
     .shadow.mx-1 {
+      margin-inline: 0px !important;
+    }
+  }
+  #Section3 {
+    .section3-flex {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .section3-game {
+      width: 500px;
+      height: fit-content;
+    }
+    .section3-article {
+      width: 100%;
+    }
+    .shadow.mx-1 {
       margin-inline: 15px !important;
     }
   }
@@ -251,6 +311,11 @@ $breakpoint-xl: 1200px;
   }
   #Section2 {
     .section2-dropdowns {
+      flex-direction: column;
+    }
+  }
+  #Section3 {
+    .section3-dropdowns {
       flex-direction: column;
     }
   }
@@ -282,9 +347,7 @@ $breakpoint-xl: 1200px;
   .TitleTextSub {
     font-size: 1.4rem;
   }
-  #Section2 {
-    .embed-responsive {
-      height: 250px;
-    }
+  .embed-responsive {
+    height: 250px;
   }
 }
