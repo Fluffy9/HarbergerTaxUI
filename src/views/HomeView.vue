@@ -136,6 +136,7 @@
               else.
             </p>
             <p>Play this game to understand the limits of Private Ownership.</p>
+            <br />
           </article>
 
           <b-card class="float-right shadow mx-1 section2-game">
@@ -275,8 +276,8 @@
               Play the game to see how this improves the allocation of land and
               the well-being of everyone.
             </p>
+            <br />
           </article>
-
           <b-card class="float-right shadow mx-1 section3-game">
             <b-card-header class="p-0 m-0">
               <b-embed
