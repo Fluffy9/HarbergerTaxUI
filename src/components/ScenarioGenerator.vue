@@ -141,7 +141,12 @@ Higher turnover rates (demand) push Josh's SAV up.`
         <div class="burger-wrapper">
           <div
             class="burger-top"
-            :style="{ height: chartData.datasets[0].data + 'px' }"
+            :style="{
+              height:
+                edgeCases.top !== null
+                  ? edgeCases.top + 'px'
+                  : chartData.datasets[0].data + 'px',
+            }"
           >
             <a
               v-b-tooltip.hover.top="
@@ -164,14 +169,21 @@ Higher turnover rates (demand) push Josh's SAV up.`
             v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
           >
             <a class="Tooltip">
-              Josh's SAV:
-              {{ Math.round(1000 * (0.5 + adjustmentPercentage)) }} K
+              Josh's SAV: $
+              {{
+                edgeCases.sav !== null
+                  ? edgeCases.sav
+                  : Math.round(1000 * (0.5 + adjustmentPercentage))
+              }}K
             </a>
           </div>
           <div
             class="burger-bottom"
             :style="{
-              height: chartData.datasets[2].data + 'px',
+              height:
+                edgeCases.bottom !== null
+                  ? edgeCases.bottom + 'px'
+                  : chartData.datasets[2].data + 'px',
             }"
           >
             <a
@@ -322,15 +334,55 @@ export default {
     };
   },
   computed: {
+    edgeCases() {
+      let containerHeight = 350;
+      let middle = 50;
+
+      let tax0 = this.SlidingScale.TaxRate === 0;
+      let turn0 = this.SlidingScale.TurnoverRate === 0;
+      let turn100 = this.SlidingScale.TurnoverRate === 1;
+
+      if (tax0) {
+        // Calculate variables specific to the tax0 edge case
+        let top = 0; // Example calculation
+        let bottom = containerHeight - middle; // Example calculation
+        let sav = "1000";
+
+        return { top, bottom, sav };
+      }
+      if (turn0) {
+        // Calculate variables specific to the tax0 edge case
+        let top = containerHeight - middle; // Example calculation
+        let bottom = 0; // Example calculation
+        let sav = "1";
+
+        return { top, bottom, sav };
+      }
+      if (turn100) {
+        // Calculate variables specific to the tax0 edge case
+        let top = 0; // Example calculation
+        let bottom = containerHeight - middle; // Example calculation
+        let sav = "1000";
+
+        return { top, bottom, sav };
+      }
+      return { top: null, bottom: null, sav: null };
+    },
+
     adjustmentPercentage() {
       let diff = this.SlidingScale.TurnoverRate - this.SlidingScale.TaxRate;
       return (diff / Math.abs(diff)) * (2 ** Math.abs(diff) - 1) * 0.5 || 0;
     },
+
     chartData() {
+      let containerHeight = 350;
       let middle = 50;
-      let bottom = (350 - middle) * (0.5 + this.adjustmentPercentage);
-      let top = 350 - middle - bottom;
+      let bottom =
+        (containerHeight - middle) * (0.5 + this.adjustmentPercentage);
+      let top = containerHeight - middle - bottom;
       console.log(`Top: ${top}, Middle: ${middle}, Bottom: ${bottom}`);
+
+      // Default return
       return {
         labels: ["Percentage"],
         datasets: [
