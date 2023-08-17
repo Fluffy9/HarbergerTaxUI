@@ -146,11 +146,19 @@ h1 {
 .scenario-slider,
 .scenario-burger {
   background: transparent !important;
+  color: $light-text;
+  font-weight: 700;
 }
-.scenario-slider .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.scenario-slider {
+  .form-group .col {
+    display: flex;
+    align-items: center;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .burger-wrapper {
