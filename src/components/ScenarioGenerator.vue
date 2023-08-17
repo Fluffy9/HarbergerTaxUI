@@ -12,8 +12,25 @@
 
     <br />
     <p class="text-left text-white">
-      Play with the sliders to explore how the relationship between Tax Rate and
-      Turnover Rate changes Josh's Self-Assessed Valuation for his Burger Shop.
+      Play with the sliders to explore how the relationship between
+      <a
+        v-b-tooltip.hover.top="
+          `Owners pay X% of their SAV in taxes to the state each year.
+Higher tax levels push Josh's SAV down.`
+        "
+        class="Tooltip Tooltip-light"
+        >Tax Rate</a
+      >
+      and
+      <a
+        v-b-tooltip.hover.top="
+          `Turnover Rate: the percentage of assets that exchange ownership in a year.
+Higher turnover rates (demand) push Josh's SAV up.`
+        "
+        class="Tooltip Tooltip-light"
+        >Turnover Rate</a
+      >
+      changes Josh's Self-Assessed Valuation for his Burger Shop.
     </p>
     <br />
     <b-alert variant="primary" :show="Boolean(activeCase['id'])">
