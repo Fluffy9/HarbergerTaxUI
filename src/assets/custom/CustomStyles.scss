@@ -163,10 +163,19 @@ h1 {
     flex-direction: column;
     justify-content: center;
   }
+  .form-row {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin: 0 !important;
+    label {
+      max-width: fit-content;
+    }
+  }
 }
 
 .burger-wrapper {
-  height: 350px;
   width: 500px;
   .Tooltip {
     text-decoration: underline;
@@ -337,7 +346,7 @@ h1 {
   }
 
   .scenario-generator {
-    height: 145px;
+    height: 165px;
   }
   .custom-card-4 {
     border-radius: 5px;
@@ -424,7 +433,7 @@ h1 {
   font-size: 1.8rem;
 }
 /**
-
+Break points
 */
 $breakpoint-xs: 0;
 $breakpoint-sm: 576px;
@@ -477,6 +486,17 @@ $breakpoint-xl: 1200px;
         order: 2;
       }
     }
+    .burger-wrapper {
+      width: 300px;
+    }
+    .scenario-slider {
+      .card-body {
+        display: flex;
+        .burger-wrapper {
+          align-self: center;
+        }
+      }
+    }
   }
 }
 
@@ -514,6 +534,9 @@ $breakpoint-xl: 1200px;
     .Example {
       text-align: center;
     }
+    .scenario-generator {
+      height: 185px;
+    }
   }
 }
 
@@ -539,6 +562,26 @@ $breakpoint-xl: 1200px;
       font-size: 3rem;
     }
   }
+  #Section4 {
+    .scenario-slider-wrapper {
+      flex-direction: column;
+      flex-flow: column;
+      .scenario-slider {
+        margin: 0 !important;
+      }
+      .scenario-slider:first-child .card-body {
+        height: min-content;
+        .card-body {
+          .burger-wrapper {
+            align-self: center;
+          }
+        }
+      }
+    }
+    .scenario-generator {
+      height: 210px;
+    }
+  }
 }
 @media (max-width: $breakpoint-sm) {
   .TitleText {
@@ -549,5 +592,36 @@ $breakpoint-xl: 1200px;
   }
   .embed-responsive {
     height: 250px;
+  }
+  #Section4 {
+    .pagination {
+      margin: 0;
+      max-height: 30px;
+      align-items: center;
+      button {
+        padding: 0;
+      }
+    }
+    .scenario-slider {
+      padding: 0;
+    }
+    .card-body {
+      padding: 0;
+    }
+    .scenario-slider-wrapper {
+      .form-group.mb-0 {
+        padding-top: 10px;
+        padding-bottom: 50px;
+      }
+      label {
+        padding: 0;
+      }
+    }
+    .scenario-generator {
+      h3 {
+        font-size: 1.2rem;
+      }
+      height: 280px;
+    }
   }
 }

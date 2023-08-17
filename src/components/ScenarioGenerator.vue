@@ -75,9 +75,7 @@ Higher turnover rates (demand) push Josh's SAV up.`
       :limit="10"
       align="fill"
     ></b-pagination>
-    <br />
-    <br />
-    <b-card-group>
+    <b-card-group class="scenario-slider-wrapper">
       <b-card class="scenario-slider">
         <b-form-group
           label-size="lg"
@@ -197,19 +195,19 @@ Higher turnover rates (demand) push Josh's SAV up.`
         </div>
       </b-card>
       <br />
-      <b-row>
-        <b-col class="text-white">
-          <br />
-          <h3 class="text-left">TLDR</h3>
-          <p class="text-left">
-            What's the key take away? Governments should set the tax rate below
-            the turnover rate to optimize total welfare, balancing individual
-            investment incentives and allocatable efficiency.
-          </p>
-        </b-col>
-      </b-row>
       <br />
     </b-card-group>
+    <b-row>
+      <b-col class="text-white">
+        <br />
+        <h3 class="text-left">TLDR</h3>
+        <p class="text-left">
+          To <b>maximise total welfare</b> governments should set the tax rate
+          below the turnover rate. This balances individual investment
+          incentives and allocatable efficiency.
+        </p>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -335,8 +333,8 @@ export default {
   },
   computed: {
     edgeCases() {
-      let containerHeight = 350;
-      let middle = 50;
+      let containerHeight = 250;
+      let middle = 40;
 
       let tax0 = this.SlidingScale.TaxRate === 0;
       let turn0 = this.SlidingScale.TurnoverRate === 0;
@@ -375,14 +373,13 @@ export default {
     },
 
     chartData() {
-      let containerHeight = 350;
-      let middle = 50;
+      let containerHeight = 250;
+      let middle = 40;
       let bottom =
         (containerHeight - middle) * (0.5 + this.adjustmentPercentage);
       let top = containerHeight - middle - bottom;
       console.log(`Top: ${top}, Middle: ${middle}, Bottom: ${bottom}`);
 
-      // Default return
       return {
         labels: ["Percentage"],
         datasets: [
@@ -489,7 +486,6 @@ export default {
   mounted() {
     // this.addPlugin([ChartjsPluginStacked100]),
     // this.renderChart(this.HamburgerChart.chartData, this.HamburgerChart.chartData.options)
-
     this.setActiveCase();
   },
 };
