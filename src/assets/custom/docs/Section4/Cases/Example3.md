@@ -1,1 +1,1 @@
-Click for an example!
+When turnover rates of assets is low, say 5% and the Tax rate is above this, say 60%. Josh is incentivised to reduces his SAV to reduce his tax bill, Josh's property has a low probability of being sold at a below market price because the demand is so low!

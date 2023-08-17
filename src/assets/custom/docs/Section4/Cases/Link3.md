@@ -1,1 +1,1 @@
-Click for an example!
+Example

@@ -291,7 +291,7 @@ export default {
         },
         {
           id: 4,
-          name: "Turnover Rate is low",
+          name: "Turnover Rate is very low",
           importance: 6,
           active: false,
           preset: { taxRate: 0.1, turnoverRate: 0.01 },
@@ -417,19 +417,19 @@ export default {
         results.push({ name: "Turnover Rate < Tax Rate", active: true });
       }
       if (this.SlidingScale.TurnoverRate < 0.02) {
-        results.push({ name: "Turnover Rate is low", active: true });
+        results.push({ name: "Turnover Rate is very low", active: true });
       }
       if (this.SlidingScale.TaxRate == 0) {
-        results.push({ name: "Tax Rate is 0", active: true });
+        results.push({ name: "Tax Rate = 0%", active: true });
       }
       if (this.SlidingScale.TaxRate == 1.0) {
-        results.push({ name: "Tax Rate is 100", active: true });
+        results.push({ name: "Tax Rate = 100%", active: true });
       }
       if (this.SlidingScale.TurnoverRate == 0) {
-        results.push({ name: "Turnover Rate is 0", active: true });
+        results.push({ name: "Turnover Rate = 0%", active: true });
       }
       if (this.SlidingScale.TurnoverRate == 1.0) {
-        results.push({ name: "Turnover Rate is 100", active: true });
+        results.push({ name: "Turnover Rate = 100%", active: true });
       }
       return results;
     },

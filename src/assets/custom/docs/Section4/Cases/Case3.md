@@ -1,1 +1,1 @@
-When the Tax is above the turnover, individuals are incentivised to lower their price to reduce their tax burden.
+When the Tax rate is above the turnover rate, individuals are incentivised to lower their price to reduce their tax burden.
