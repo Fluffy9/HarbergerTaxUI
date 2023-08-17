@@ -35,7 +35,7 @@ Higher turnover rates (demand) push Josh's SAV up.`
     <br />
     <b-alert variant="primary" :show="Boolean(activeCase['id'])">
       <b-row>
-        <b-col>
+        <b-col class="scenario-generator">
           <h3>{{ activeCase.name }}</h3>
           <p class="text-left" v-if="Boolean(activeCase['id'])">
             <VueShowdown
