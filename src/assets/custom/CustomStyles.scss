@@ -508,6 +508,9 @@ $breakpoint-xl: 1200px;
     .bv-d-xs-down-none {
       display: flex !important;
     }
+    .Example {
+      text-align: center;
+    }
   }
 }
 @media (max-width: $breakpoint-md) {

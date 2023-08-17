@@ -1,1 +1,1 @@
-You are incentivised to set your price above your true valuation. This is the optimal outcome to maximise Total welfare.
+When the Tax Rate is lower than the Turnover Rate, Josh is incentivised to set his SAV above his true valuation. At this point we maximise total welfare, balancing allocative and investment efficiency.

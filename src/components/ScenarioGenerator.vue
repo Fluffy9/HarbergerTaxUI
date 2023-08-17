@@ -48,6 +48,23 @@ Higher turnover rates (demand) push Josh's SAV up.`
               :options="{ emoji: true }"
             />
           </p>
+          <a
+            class="Tooltip Example"
+            v-b-tooltip.hover.top="
+              require(`@/assets/custom/docs/Section4/Cases/Example${activeCase['id']}.md`)
+                .default
+            "
+            v-if="Boolean(activeCase['id'])"
+          >
+            <VueShowdown
+              :markdown="
+                require(`@/assets/custom/docs/Section4/Cases/Link${activeCase['id']}.md`)
+                  .default
+              "
+              flavor="github"
+              :options="{ emoji: true }"
+            />
+          </a>
         </b-col>
       </b-row>
     </b-alert>
@@ -240,34 +257,34 @@ export default {
         // }
       },
       SlidingScale: {
-        TaxRate: 0,
-        TurnoverRate: 0,
+        TaxRate: 0.1,
+        TurnoverRate: 0.1,
       },
       activeCases: [
         {
           id: 5,
-          name: "Tax Rate is 0",
+          name: "Tax Rate = 0%",
           importance: 10,
           active: false,
           preset: { taxRate: 0, turnoverRate: 0.1 },
         },
         {
           id: 6,
-          name: "Tax Rate is 100",
+          name: "Tax Rate = 100%",
           importance: 9,
           active: false,
           preset: { taxRate: 1.0, turnoverRate: 0.1 },
         },
         {
           id: 7,
-          name: "Turnover Rate is 0",
+          name: "Turnover Rate = 0%",
           importance: 8,
           active: false,
           preset: { taxRate: 0.1, turnoverRate: 0 },
         },
         {
           id: 8,
-          name: "Turnover Rate is 100",
+          name: "Turnover Rate = 100%",
           importance: 7,
           active: false,
           preset: { taxRate: 0.1, turnoverRate: 1.0 },

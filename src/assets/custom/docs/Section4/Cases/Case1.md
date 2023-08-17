@@ -1,1 +1,3 @@
-You are incentivised to set the price at the true valuation. This is the optimal Tax rate to maximise Allocative welfare.
+When the tax and turnover are equal, their forces balance out. Hence, Josh is incentivised to set his SAV at his true valuation. (500K)
+
+When the tax and turnover are equal, allocative efficiency is maximised but this is at the expense of a large drop in investment efficiency.
