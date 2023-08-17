@@ -8,16 +8,16 @@
       border: solid 1px;
     "
   >
-    <h2 class="text-white text-left">Scenario Generator</h2>
+    <h2 class="text-white text-left">Josh's Burger Shop</h2>
 
+    <br />
+    <p class="text-left text-white">
+      Play with the sliders to explore how the relationship between Tax Rate and
+      Turnover Rate changes Josh's Self-Assessed Valuation for his Burger Shop.
+    </p>
     <br />
     <b-alert variant="primary" :show="Boolean(activeCase['id'])">
       <b-row>
-        <!-- <b-col cols="1">
-                    <b-btn variant="primary" block class="h-100">
-                        <BIconCaretLeftFill></BIconCaretLeftFill>
-                    </b-btn>
-                </b-col> -->
         <b-col>
           <h3>{{ activeCase.name }}</h3>
           <p class="text-left" v-if="Boolean(activeCase['id'])">
@@ -32,18 +32,6 @@
             />
           </p>
         </b-col>
-        <!-- <b-col>
-                    <div v-for="c,index in activeCases.length" v-if="activeCases[index]['active']">
-                        <h3>{{ activeCases[index].name }}</h3>
-                        <p class="text-left"><VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Cases/Case${index+1}.md`).default" flavor="github" :options="{ emoji: true }" /></p>
-                        <hr v-show="activeCases.length > 1 && index < activeCases.length-2">
-                    </div>
-                </b-col> -->
-        <!-- <b-col cols="1">
-                    <b-btn variant="primary" block class="h-100">
-                        <BIconCaretRightFill></BIconCaretRightFill>
-                    </b-btn>
-                </b-col> -->
       </b-row>
     </b-alert>
     <b-pagination
@@ -142,7 +130,7 @@
             v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
           >
             <a class="Tooltip">
-              Ahmed's SAV:
+              Josh's SAV:
               {{ Math.round(1000 * (0.5 + adjustmentPercentage)) }} K
             </a>
           </div>

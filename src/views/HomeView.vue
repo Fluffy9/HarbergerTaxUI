@@ -15,11 +15,6 @@
           <p class="TitleText">WTF is Partial Common Ownership?</p>
           <p class="TitleTextSub">(and why should I care?)</p>
         </template>
-        <!-- <template v-slot:lead>
-                    <p class="text-white text-left">
-                        Join us on a quest to learn more — Complete with fun games, interactive quizzes and hidden treasures!
-                    </p>
-                </template> -->
       </b-jumbotron>
     </div>
     <div id="Section1" class="section bg-white">
@@ -35,7 +30,9 @@
                 require(`@/assets/custom/docs/Section1/Title.md`).default
               "
               flavor="github"
-              :options="{ emoji: true }"
+              :options="{
+                emoji: true,
+              }"
             />
           </b-col>
         </b-row>
@@ -103,7 +100,9 @@
                 require(`@/assets/custom/docs/Section2/Title.md`).default
               "
               flavor="github"
-              :options="{ emoji: true }"
+              :options="{
+                emoji: true,
+              }"
             />
           </b-col>
         </b-row>
@@ -118,17 +117,24 @@
             </p>
             <p>If you buy a plot of land, you get three main benefits:</p>
             <ul class="letter-list">
-              <li><p>The right to use the land</p></li>
-              <li><p>The right to exclude others from using it</p></li>
-              <li><p>The right to sell it whenever you want</p></li>
+              <li>
+                <p>The right to use the land</p>
+              </li>
+              <li>
+                <p>The right to exclude others from using it</p>
+              </li>
+              <li>
+                <p>The right to sell it whenever you want</p>
+              </li>
             </ul>
             <br />
             <h3>Okay, so what's the problem?</h3>
             <p>
-              Part <span class="inline-blue">c</span> is important here. If you
-              decide to buy land but leave it unused, it prevents others from
-              building useful things like businesses, parks, or museums that
-              could benefit society.
+              Part
+              <span class="inline-blue">c</span>
+              is important here. If you decide to buy land but leave it unused,
+              it prevents others from building useful things like businesses,
+              parks, or museums that could benefit society.
             </p>
             <p>
               In the example above, your plot of land is unproductive. The land
@@ -184,7 +190,9 @@
                   }/Main.md`).default
                 "
                 flavor="github"
-                :options="{ emoji: true }"
+                :options="{
+                  emoji: true,
+                }"
               />
               <b-collapse
                 :id="`collapse-section2-${index}`"
@@ -204,7 +212,9 @@
                       }/Collapse.md`).default
                     "
                     flavor="github"
-                    :options="{ emoji: true }"
+                    :options="{
+                      emoji: true,
+                    }"
                   />
                 </b-alert>
                 <br />
@@ -249,7 +259,9 @@
                 require(`@/assets/custom/docs/Section3/Title.md`).default
               "
               flavor="github"
-              :options="{ emoji: true }"
+              :options="{
+                emoji: true,
+              }"
             />
           </b-col>
         </b-row>
@@ -263,8 +275,12 @@
             </p>
             <p>If you buy a plot of land, you get two main benefits:</p>
             <ul class="letter-list">
-              <li><p>The right to use the land</p></li>
-              <li><p>The right to exclude others from using it</p></li>
+              <li>
+                <p>The right to use the land</p>
+              </li>
+              <li>
+                <p>The right to exclude others from using it</p>
+              </li>
             </ul>
             <br />
 
@@ -321,7 +337,9 @@
                   }/Main.md`).default
                 "
                 flavor="github"
-                :options="{ emoji: true }"
+                :options="{
+                  emoji: true,
+                }"
               />
               <b-collapse
                 :id="`collapse-section2-${index}`"
@@ -341,7 +359,9 @@
                       }/Collapse.md`).default
                     "
                     flavor="github"
-                    :options="{ emoji: true }"
+                    :options="{
+                      emoji: true,
+                    }"
                   />
                 </b-alert>
                 <br />
@@ -386,41 +406,73 @@
                   require(`@/assets/custom/docs/Section4/Title.md`).default
                 "
                 flavor="github"
-                :options="{ emoji: true }"
+                :options="{
+                  emoji: true,
+                }"
               />
             </b-col>
           </b-row>
           <br />
           <b-row>
-            <b-col>
+            <b-col class="section4-top">
               <b-card
-                overlay
-                bg-variant="dark"
-                class="shadow float-right mx-1"
-                style="max-width: 50%"
-                img-src="@/assets/custom/images/storefront.png"
+                class="shadow mx-1 custom-card-4"
+                style="float: right"
+                img-src="@/assets/custom/images/ChefBurger.png"
               >
-                <b-alert class="text-dark" show>
-                  <span style="opacity: 1">
-                    Hi, I'm Ahmed. This is my Hamburger shop. My honest and true
-                    value for this shop is $500K.
-                  </span>
-                </b-alert>
+                <template v-slot="footer">
+                  <small class="text-muted text-left">
+                    Josh's Burger Shop
+                  </small>
+                </template>
               </b-card>
               <article class="text-left">
-                In the game, there was a tax that owners paid continually at a
-                rate of 10% per year based on their valuation of their property.
-                This mechanism is called Harberger Taxation.
-
-                <h3>Harberger Taxation:</h3>
+                <p>
+                  In the game, property owners paid a continual tax based on the
+                  self-assessed value of their property. This is known as a
+                  harberger tax.
+                </p>
+                <p>
+                  In a harberger tax system, owners of property set a
+                  <a
+                    class="Tooltip Tooltip-light"
+                    v-b-tooltip.hover.top="
+                      'The name says it all here. You set the price of your asset.'
+                    "
+                    >self-assessed value (SAV)</a
+                  >
+                  . This value is influenced by two key mechanism which act in
+                  opposite directions:
+                </p>
                 <br />
-                <ul>
-                  <li>
-                    Owners must pay an X% tax based on their self-assessed value
-                  </li>
-                  <li>Owners must sell at their self-assessed value</li>
-                </ul>
+                <h3>1. A Tax on the owner's SAV</h3>
 
+                <p>
+                  Owners are incentivised to <b>decrease their SAV</b> to reduce
+                  their tax bill.
+                </p>
+
+                <h3>2. Owners must sell at their SAV</h3>
+
+                <p>
+                  A SAV changes as demand changes. An increase in the
+                  <a
+                    class="Tooltip Tooltip-light"
+                    v-b-tooltip.hover.top="
+                      `This is the percentage of assets that change ownership in a year. You can think of 'turnover rate' as 'demand'.`
+                    "
+                    >turnover rate</a
+                  >
+                  of an asset incentivises owners to
+                  <b>increase their SAV</b>.
+                </p>
+                <br />
+                <p>
+                  To get a clearer understanding of these mechanisms, consider
+                  the following example.
+                </p>
+
+                <!-- 
                 If you must sell at your self-assessed value and the
                 <a
                   class="Tooltip"
@@ -430,7 +482,7 @@
                   >turnover rate</a
                 >
                 of assets is high, then you could set a higher price. It's
-                important you see these two act in opposite directions...
+                important you see these two act in opposite directions... -->
               </article>
             </b-col>
           </b-row>
@@ -470,7 +522,9 @@
                     }/Main.md`).default
                   "
                   flavor="github"
-                  :options="{ emoji: true }"
+                  :options="{
+                    emoji: true,
+                  }"
                 />
                 <b-collapse
                   :id="`collapse-section2-${index}`"
@@ -490,7 +544,9 @@
                         }/Collapse.md`).default
                       "
                       flavor="github"
-                      :options="{ emoji: true }"
+                      :options="{
+                        emoji: true,
+                      }"
                     />
                   </b-alert>
                   <br />
@@ -529,7 +585,9 @@
                 require(`@/assets/custom/docs/Section5/Title.md`).default
               "
               flavor="github"
-              :options="{ emoji: true }"
+              :options="{
+                emoji: true,
+              }"
             />
           </b-col>
         </b-row>
@@ -550,7 +608,9 @@
                   }/Main.md`).default
                 "
                 flavor="github"
-                :options="{ emoji: true }"
+                :options="{
+                  emoji: true,
+                }"
               />
               <b-collapse
                 :id="`collapse-section5-${index}`"
@@ -565,7 +625,9 @@
                     }/Collapse.md`).default
                   "
                   flavor="github"
-                  :options="{ emoji: true }"
+                  :options="{
+                    emoji: true,
+                  }"
                 />
                 <br />
               </b-collapse>
@@ -598,7 +660,9 @@
                 require(`@/assets/custom/docs/Section6/Title.md`).default
               "
               flavor="github"
-              :options="{ emoji: true }"
+              :options="{
+                emoji: true,
+              }"
             />
           </b-col>
         </b-row>
@@ -620,7 +684,9 @@
                         }/Question.md`).default
                       "
                       flavor="github"
-                      :options="{ emoji: true }"
+                      :options="{
+                        emoji: true,
+                      }"
                     />
                   </h3>
                 </b-button>
@@ -640,7 +706,9 @@
                         }/Answer.md`).default
                       "
                       flavor="github"
-                      :options="{ emoji: true }"
+                      :options="{
+                        emoji: true,
+                      }"
                   /></b-card-text>
                 </b-card-body>
               </b-collapse>
