@@ -495,7 +495,7 @@
 
           <br />
 
-          <b-row>
+          <b-row class="section4-dropdowns">
             <b-col
               v-for="(sentiment, index) in [true, true, false]"
               :key="index"

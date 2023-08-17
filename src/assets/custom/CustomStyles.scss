@@ -537,6 +537,9 @@ $breakpoint-xl: 1200px;
     .scenario-generator {
       height: 185px;
     }
+    .section4-dropdowns {
+      flex-direction: column;
+    }
   }
 }
 
@@ -604,9 +607,11 @@ $breakpoint-xl: 1200px;
     }
     .scenario-slider {
       padding: 0;
-    }
-    .card-body {
-      padding: 0;
+      border: none;
+
+      .card-body {
+        padding: 0;
+      }
     }
     .scenario-slider-wrapper {
       .form-group.mb-0 {
