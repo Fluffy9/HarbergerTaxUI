@@ -176,8 +176,11 @@ h1 {
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  a {
+    margin-bottom: 25px;
+  }
 }
 .burger-middle-2 {
   background-color: #ffce00;
@@ -196,8 +199,11 @@ h1 {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  a {
+    margin-top: 25px;
+  }
 }
 
 // UL - Letters instead of dots
