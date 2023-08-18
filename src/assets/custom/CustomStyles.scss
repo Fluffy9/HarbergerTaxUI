@@ -121,6 +121,29 @@ h1 {
   margin-left: 1rem !important;
 }
 
+// Navbar
+
+#nav {
+  .navbar {
+    justify-content: flex-end;
+    max-width: 1500px;
+    margin: auto;
+    a {
+      color: $light-text !important;
+    }
+  }
+
+  .navbar-nav {
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
 // Burger dynamic
 .Tooltip {
   position: relative;
