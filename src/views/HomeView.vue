@@ -592,7 +592,7 @@
           </b-col>
         </b-row>
         <br />
-        <b-row>
+        <b-row class="section5-dropdowns">
           <b-col v-for="(x, index) in [, , ,]" :key="'usecases-' + index">
             <b-card
               v-if="index < 3"

@@ -335,14 +335,8 @@ h1 {
 }
 
 #Section4 {
-  .section4-top {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-
-    article {
-      // width: 53%;
-    }
+  .scenario-slider {
+    border: none;
   }
 
   .scenario-generator {
@@ -379,6 +373,7 @@ h1 {
   }
 
   .pagination {
+    margin-bottom: 50px;
     .page-item:nth-child(1),
     .page-item:nth-child(2),
     .page-item:nth-child(11),
@@ -538,6 +533,11 @@ $breakpoint-xl: 1200px;
       height: 185px;
     }
     .section4-dropdowns {
+      flex-direction: column;
+    }
+  }
+  #Section5 {
+    .section5-dropdowns {
       flex-direction: column;
     }
   }

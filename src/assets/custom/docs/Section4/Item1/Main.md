@@ -1,1 +1,1 @@
-Harberger Taxes redistribute wealth.
+Harberger Taxes <b>redistribute wealth</b>.
