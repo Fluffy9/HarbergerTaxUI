@@ -299,7 +299,7 @@
               <b-embed
                 type="iframe"
                 aspect="4by3"
-                src="https://itch.io/embed-upload/8251302?color=333333"
+                src="https://itch.io/embed-upload/8530248?color=333333"
                 allowfullscreen
               ></b-embed>
             </b-card-header>
