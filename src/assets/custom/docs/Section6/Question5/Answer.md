@@ -1,1 +1,1 @@
-If you have a personal attachment to your car or business or plot of land, you can increase your self-assessed value. To help you calculate the correct for-sale price, automated valuation services could give guidance on how to set prices.
+To help you calculate the correct for-sale price, automated valuation services could give guidance on how to set prices. If you have a personal attachment to your car or business or plot of land, you can increase your self-assessed value, deterring anyone from buying your property.

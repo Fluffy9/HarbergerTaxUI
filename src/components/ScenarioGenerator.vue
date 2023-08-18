@@ -1,12 +1,7 @@
 <template>
   <div
     class="text-dark shadow p-4"
-    style="
-      border-radius: 5px;
-      backdrop-filter: blur(10px);
-      background-color: #ffffff26;
-      border: solid 1px;
-    "
+    style="border-radius: 5px; border: solid 1px"
   >
     <h2 class="text-white text-left">Josh's Burger Shop</h2>
 

@@ -455,7 +455,7 @@
                 <h3>2. Owners must sell at their SAV</h3>
 
                 <p>
-                  A SAV changes as demand changes. An increase in the
+                  SAV changes as demand changes. An increase in the
                   <a
                     class="Tooltip Tooltip-light"
                     v-b-tooltip.hover.top="
@@ -488,7 +488,8 @@
           </b-row>
           <br />
           <b-row>
-            <b-col>
+            <b-col class="scenario-generator-wrapper">
+              <div class="background"></div>
               <ScenarioGenerator></ScenarioGenerator>
             </b-col>
           </b-row>

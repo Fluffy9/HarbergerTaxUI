@@ -342,6 +342,26 @@ h1 {
   .scenario-generator {
     height: 165px;
   }
+
+  .scenario-generator-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin-inline: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 100%;
+      background-color: #ffffff26; /* Transparent background color */
+      backdrop-filter: blur(10px);
+      z-index: -1; /* Place the background behind the content */
+    }
+  }
   .custom-card-4 {
     border-radius: 5px;
     backdrop-filter: blur(10px);

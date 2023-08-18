@@ -1,1 +1,3 @@
-Absolutely, this education tool focused on the Private Property model of real estate because most people understand how this market works. Partial Common Ownership should be implemented on a small scale with minorities and the general public in mind. After all this model is an attempt to improve the lives of as many people by making efficiecy improvents.
+First, while the private property market is functional, it excludes many because prices are incredibly high. Partial Common Ownership reduces these prices to allow more to get onto the property ladder.
+
+Secondly, this educational website focuses on the Private Property model for real estate because most people understand how this market works. We should trial Partial Common Ownership on a small scale while protecting minorities and the general public.
