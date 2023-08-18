@@ -46,11 +46,12 @@
         <div class="container text-light">
           <br />
           <br />
-          Made with 💜 by
           <a
             :href="contributor['Link']"
             v-for="contributor in Footer.Contributors"
-            >{{ contributor["Name"] }},
+            class="RaidGuild"
+          >
+            <img src="./assets/custom/images/RaidGuildLogo.webp" />
           </a>
           <br />
           <br />

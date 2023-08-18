@@ -122,7 +122,6 @@ h1 {
 }
 
 // Navbar
-
 #nav {
   .navbar {
     justify-content: flex-end;
@@ -132,15 +131,22 @@ h1 {
       color: $light-text !important;
     }
   }
-
   .navbar-nav {
     align-items: center;
     width: 100%;
     justify-content: flex-end;
   }
-
   .navbar-dark .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+// Footer
+#footer {
+  .RaidGuild {
+    img {
+      width: 200px;
+    }
   }
 }
 
