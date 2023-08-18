@@ -675,20 +675,18 @@
                   v-b-toggle="`accordion-${index + 1}`"
                   variant="primary"
                 >
-                  <h3>
-                    <VueShowdown
-                      class="text-center"
-                      :markdown="
-                        require(`@/assets/custom/docs/Section6/Question${
-                          index + 1
-                        }/Question.md`).default
-                      "
-                      flavor="github"
-                      :options="{
-                        emoji: true,
-                      }"
-                    />
-                  </h3>
+                  <VueShowdown
+                    class="text-center"
+                    :markdown="
+                      require(`@/assets/custom/docs/Section6/Question${
+                        index + 1
+                      }/Question.md`).default
+                    "
+                    flavor="github"
+                    :options="{
+                      emoji: true,
+                    }"
+                  />
                 </b-button>
               </b-card-header>
               <b-collapse
@@ -740,7 +738,7 @@ export default {
   data() {
     return {
       // The number of FAQ questions
-      FAQs: 2,
+      FAQs: 5,
       collapse: {
         // Whether or not the collapse starts open
         section2: [false, false, false],

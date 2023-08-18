@@ -1,1 +1,1 @@
-A Question
+### What is a Harberger Tax?
