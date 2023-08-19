@@ -175,7 +175,7 @@
                             </b-card-header>
                             <br>
                             <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section3/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                            <b-collapse :id="`collapse-section2-${index}`" v-model="collapse.section2[index]" class="mt-2">
+                            <b-collapse :id="`collapse-section3-${index}`" v-model="collapse.section3[index]" class="mt-2">
                                 <b-alert header="Example" :variant="sentiment ? 'success' : 'danger'" show>
                                     <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section3/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
                                 </b-alert>
@@ -184,12 +184,12 @@
                             <b-button
                             block
                             variant="link"
-                            :class="collapse.section2[index] ? null : 'collapsed'"
-                            :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
-                            :aria-controls="`collapse-section2-${index}`"
-                            @click="toggleCollapse(2, index)"
+                            :class="collapse.section3[index] ? null : 'collapsed'"
+                            :aria-expanded="collapse.section3[index] ? 'true' : 'false'"
+                            :aria-controls="`collapse-section3-${index}`"
+                            @click="toggleCollapse(3, index)"
                             >
-                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section2[index]"></BIconCaretUpFill>
+                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section3[index]"></BIconCaretUpFill>
                                 <BIconCaretDownFill :class="sentiment ? 'text-success' : 'text-danger'" v-else></BIconCaretDownFill>
                             </b-button>
                         </b-card>
@@ -262,7 +262,7 @@
                             </b-card-header>
                             <br>
                             <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Item${index+1}/Main.md`).default" flavor="github" :options="{ emoji: true }" />
-                            <b-collapse :id="`collapse-section2-${index}`" v-model="collapse.section2[index]" class="mt-2">
+                            <b-collapse :id="`collapse-section4-${index}`" v-model="collapse.section4[index]" class="mt-2">
                                 <b-alert header="Example" :variant="sentiment ? 'success' : 'danger'" show>
                                     <VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Item${index+1}/Collapse.md`).default" flavor="github" :options="{ emoji: true }" />
                                 </b-alert>
@@ -271,12 +271,12 @@
                             <b-button
                             block
                             variant="link"
-                            :class="collapse.section2[index] ? null : 'collapsed'"
-                            :aria-expanded="collapse.section2[index] ? 'true' : 'false'"
-                            :aria-controls="`collapse-section2-${index}`"
-                            @click="toggleCollapse(2, index)"
+                            :class="collapse.section4[index] ? null : 'collapsed'"
+                            :aria-expanded="collapse.section4[index] ? 'true' : 'false'"
+                            :aria-controls="`collapse-section4-${index}`"
+                            @click="toggleCollapse(4, index)"
                             >
-                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section2[index]"></BIconCaretUpFill>
+                                <BIconCaretUpFill :class="sentiment ? 'text-success' : 'text-danger'" v-if="collapse.section4[index]"></BIconCaretUpFill>
                                 <BIconCaretDownFill :class="sentiment ? 'text-success' : 'text-danger'" v-else></BIconCaretDownFill>
                             </b-button>
                         </b-card>
@@ -370,6 +370,8 @@ export default {
         collapse: {
             // Whether or not the collapse starts open
             section2: [false, false, false],
+            section3: [false, false, false],
+            section4: [false, false, false],
             section5: [false, false, false],
         }
     }
