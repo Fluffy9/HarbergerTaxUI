@@ -46,8 +46,8 @@
             >
               <template v-slot="footer">
                 <small class="text-muted text-left">
-                  Partial common ownership is a model for ownership. Like
-                  private ownership except assets are always for sale.
+                  Partial common ownership is a model for ownership, like
+                  private ownership, except assets are always for sale.
                 </small>
               </template>
             </b-card>
