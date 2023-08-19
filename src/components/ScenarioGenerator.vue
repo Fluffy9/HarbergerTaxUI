@@ -143,7 +143,7 @@ Higher turnover rates (demand) push Josh's SAV up.`
           >
             <a
               v-b-tooltip.hover.top="
-                'the demand for assets like yours is high!'
+                'The higher the tax rate, the greater the downward force'
               "
               class="Tooltip Tooltip-Arrow-Down"
               >Tax rate</a
@@ -159,7 +159,7 @@ Higher turnover rates (demand) push Josh's SAV up.`
             :style="{
               height: chartData.datasets[1].data - 10 + 'px',
             }"
-            v-b-tooltip.hover.top="'the demand for assets like yours is high!'"
+            v-b-tooltip.hover.top="`His SAV is his 'for sale' price`"
           >
             <a class="Tooltip">
               Josh's SAV: $
@@ -181,7 +181,7 @@ Higher turnover rates (demand) push Josh's SAV up.`
           >
             <a
               v-b-tooltip.hover.top="
-                'the demand for assets like yours is high!'
+                'Higher turnover rates mean higher demand and a larger upward force'
               "
               class="Tooltip Tooltip-Arrow-Up"
               >Turnover rate</a
