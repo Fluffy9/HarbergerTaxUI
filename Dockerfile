@@ -1,4 +1,4 @@
-From node
+FROM node
 
 ENV NODE_ENV local
 RUN npm install -g http-server

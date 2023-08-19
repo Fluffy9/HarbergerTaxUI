@@ -8,8 +8,13 @@ $body-bg:#050f19;
 // $secondary: #fbbcd4;
 // $success: #c3d77e;
 // $warning: #fae68f;
+.section {
+    scroll-behavior: smooth;    
+
+}
 html, body, #app {
     font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
 }
 
 article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
@@ -18,13 +23,16 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
 
 a {
     font-weight: bold;
-    color: $primary !important;
+    color: $primary;
 
     &.router-link-exact-active {
-      color: $primary !important;
+      color: $primary;
     }
 }
-
+article a {
+    font-weight: bold;
+    color:$primary !important
+}
 #header {
     max-width: 1500px;
     min-width: 500px;
@@ -46,10 +54,10 @@ a {
 .pattern:before {
     content: "";
     position: absolute;
-    top: -200%;
-    left: -200%;
-    bottom: 0;
-    right: 0;
+    top: -100%;
+    left: -100%;
+    bottom: -100%;
+    right: -100%;
     z-index: -1;
     background: url("@/assets/custom/images/City-Icons.jpg") 0 0 repeat;
     transform: rotate(30deg);
@@ -123,6 +131,15 @@ h1 {
     background-color: rgb(17, 18, 36);
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 /**
 
 */

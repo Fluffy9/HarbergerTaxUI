@@ -6,23 +6,16 @@
                 {"Name": "Lesson 1", "Section": 1},
                 {"Name": "Lesson 2", "Section": 2},
                 {"Name": "Lesson 3", "Section": 3},
-                {"Name": "Lesson 4", "Section": 4},
-                {"Name": "Lesson 5", "Section": 5}
+                {"Name": "Lesson 4", "Section": 4}
             ]
         },
         {
             "Name": "Use Cases",
-            "Section": 6
+            "Section": 5
         },
         {
             "Name": "FAQs",
-            "Section": 7
-        },
-        {
-            "Name": "Donate",
-            "Section": 8,
-            "External": ""
-
+            "Section": 6
         }
     ]
 }

@@ -10,8 +10,12 @@
                     </b-btn>
                 </b-col> -->
                 <b-col>
-                    <h3>{{ activeCase.name }}</h3>
-                    <p class="text-left" v-if="Boolean(activeCase['id'])"><VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Cases/Case${activeCase['id']}.md`).default" flavor="github" :options="{ emoji: true }" /></p>
+                    <div style="min-height: 150px; max-height: 150px;">
+                        <h3>{{ activeCase.name }}</h3>
+                        <p class="text-left" v-if="Boolean(activeCase['id'])"><VueShowdown class="text-left" :markdown="require(`@/assets/custom/docs/Section4/Cases/Case${activeCase['id']}.md`).default" flavor="github" :options="{ emoji: true }" /></p>
+                        <br>
+
+                    </div>
                 </b-col>
                 <!-- <b-col>
                     <div v-for="c,index in activeCases.length" v-if="activeCases[index]['active']">
@@ -199,7 +203,6 @@
             }
         },
         setPreset(id){
-            debugger
             let current = this.activeCases.find(x => x.id == id)
             this.SlidingScale.TaxRate = current.preset.taxRate
             this.SlidingScale.TurnoverRate = current.preset.turnoverRate
@@ -250,3 +253,5 @@
     }
   }
   </script>
+<style scoped>
+</style>
