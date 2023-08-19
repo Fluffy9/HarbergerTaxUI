@@ -20,4 +20,4 @@ RUN npm install
 COPY . .
 EXPOSE 8080
 ENTRYPOINT ["/bin/sh"]
-"cp -prnv /custom/ /app/src/assets/custom/"
+#"cp -prnv /custom/ /app/src/assets/custom/"
