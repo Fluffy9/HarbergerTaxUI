@@ -150,7 +150,7 @@
               <b-embed
                 type="iframe"
                 aspect="4by3"
-                src="https://itch.io/embed-upload/8530305?color=333333"
+                src="https://itch.io/embed-upload/8541088?color=333333"
                 allowfullscreen
               ></b-embed>
             </b-card-header>
@@ -299,7 +299,7 @@
               <b-embed
                 type="iframe"
                 aspect="4by3"
-                src="https://itch.io/embed-upload/8530355?color=333333"
+                src="https://itch.io/embed-upload/8541020?color=333333"
                 allowfullscreen
               ></b-embed>
             </b-card-header>
