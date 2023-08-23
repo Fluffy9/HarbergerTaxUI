@@ -734,7 +734,7 @@ export default {
   data () {
     return {
         // The number of FAQ questions
-        FAQs: 2,
+        FAQs: 5,
         collapse: {
             // Whether or not the collapse starts open
             section2: [false, false, false],
