@@ -1,5 +1,5 @@
 #### Investment Efficiency
 
-Because the amount of tax you pay is based on the self-assessed valuation of the property, if the money you invest into a vacant plot of land increases the output of that land and hence your valuation increases. 10% of the increase in value is captured by the tax and the remainder is captured by you. * Link to investment efficiency example?
+In a Partial Common Ownership system, asset owners pay higher taxes in the long run compared to a Private Ownership system. This increased tax burden reduces the potential returns on investment, leading to slightly lower financial incentives for investing in their property. This is known as a decrease in investment efficiency.
 
-Partial Common Ownership reduces investment efficiency, by a relatively small amount for a much larger increase in allocatable efficiency.
+Partial Common Ownership reduces investment efficiency by a relatively small amount for a much larger increase in allocative efficiency.

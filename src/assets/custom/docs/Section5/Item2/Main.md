@@ -1,1 +1,1 @@
-### Advertisements online. Content creators and owners of websites can raise funds through advertisements and anyone willing to pay more gets the rights to advertise.
+### Online Advertisements

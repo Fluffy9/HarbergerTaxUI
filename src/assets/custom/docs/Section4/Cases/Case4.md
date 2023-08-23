@@ -1,1 +1,1 @@
-If assets are in very low demand, you are incentivised to set a price lower than your true valuation, this way you guarentee saving money on taxes and it is very unlikely that someone will buy your asset.
+If assets are in very low demand, you are incentivised to set a price lower than your true valuation, this way you guarantee saving money on taxes and it is very unlikely that someone will buy your asset.

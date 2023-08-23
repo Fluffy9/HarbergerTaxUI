@@ -1,1 +1,1 @@
-Private Ownership has low allocative efficiency.
+Private Ownership has <b>low allocative efficiency</b>.

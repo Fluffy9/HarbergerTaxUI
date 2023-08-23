@@ -1,21 +1,12 @@
 {
-    "config": [
-        {
-            "Name": "Learn",
-            "Subsections": [
-                {"Name": "Lesson 1", "Section": 1},
-                {"Name": "Lesson 2", "Section": 2},
-                {"Name": "Lesson 3", "Section": 3},
-                {"Name": "Lesson 4", "Section": 4}
-            ]
-        },
-        {
-            "Name": "Use Cases",
-            "Section": 5
-        },
-        {
-            "Name": "FAQs",
-            "Section": 6
-        }
-    ]
+  "config": [
+    {
+      "Name": "Use Cases",
+      "Section": 5
+    },
+    {
+      "Name": "FAQs",
+      "Section": 6
+    }
+  ]
 }
