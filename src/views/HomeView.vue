@@ -137,6 +137,8 @@
                 <b-card class="float-right shadow mx-1 section2-game">
                 <b-card-header class="p-0 m-0">
                     <b-embed
+                        style="display: none;"
+                        onload="this.style.display='block';"
                         type="iframe"
                         aspect="4by3"
                         src="https://itch.io/embed-upload/8541088?color=333333"
@@ -286,6 +288,8 @@
           <b-card class="float-right shadow mx-1 section3-game">
                         <b-card-header class="p-0 m-0">
                             <b-embed
+                                style="display: none;"
+                                onload="this.style.display='block';"
                                 type="iframe"
                                 aspect="4by3"
                                 src="https://itch.io/embed-upload/8541610?color=333333"
