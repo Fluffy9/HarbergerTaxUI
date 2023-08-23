@@ -9,7 +9,12 @@
         </b-navbar-brand> -->
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
+        <b-collapse v-if="$route.name.toLowerCase() == 'home'" id="nav-collapse" is-nav>
+            <b-navbar-nav class="mr-auto text-left">
+              <b-nav-item href="#Section5">Use Cases</b-nav-item>
+              <b-nav-item href="#Section6">FAQs</b-nav-item>
+            </b-navbar-nav>
+          </b-collapse>
         <!-- <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="mr-auto text-left">
 
