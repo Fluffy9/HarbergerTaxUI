@@ -19,9 +19,9 @@ html,
 body,
 #app {
   font-family: "Rubik", sans-serif;
-.section {
-    scroll-behavior: smooth;    
-
+    .section {
+        scroll-behavior: smooth;    
+    }
 }
 
 article .h1,
@@ -483,7 +483,7 @@ h1 {
 .TitleTextSub {
   color: $light-text;
   font-size: 1.8rem;
-
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
