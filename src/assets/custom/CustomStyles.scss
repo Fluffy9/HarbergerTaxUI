@@ -19,6 +19,9 @@ html,
 body,
 #app {
   font-family: "Rubik", sans-serif;
+.section {
+    scroll-behavior: smooth;    
+
 }
 
 article .h1,
@@ -31,14 +34,19 @@ article .h6 {
 }
 
 a {
+
   font-weight: bold;
   color: $primary !important;
 
   &.router-link-exact-active {
     color: $primary !important;
   }
-}
 
+}
+article a {
+    font-weight: bold;
+    color:$primary !important
+}
 #header {
   max-width: 1500px;
   //   min-width: 500px; // TODO
@@ -475,6 +483,16 @@ h1 {
 .TitleTextSub {
   color: $light-text;
   font-size: 1.8rem;
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+
 }
 /**
 Break points

@@ -10,8 +10,9 @@
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-        <b-collapse id="nav-collapse" is-nav>
+        <!-- <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="mr-auto text-left">
+
             <b-nav-item-dropdown
               v-if="!DropdownItem['Section'] && !DropdownItem['External']"
               v-for="DropdownItem in Menu"
@@ -30,18 +31,17 @@
               >{{ item["Name"] }}</b-nav-item
             >
           </b-navbar-nav>
-
           <!-- Right aligned nav items -->
           <!-- <b-navbar-nav class="m-0">
             <connect-evm variant="light" :pill="true"></connect-evm>
           </b-navbar-nav> -->
-        </b-collapse>
       </b-navbar>
     </div>
 
-    <router-view />
-    <br />
-    <div id="footer" style="max-height: 200px">
+    <router-view/>
+    <br>
+    <div v-if="$route.name.toLowerCase() == 'home'" id="footer" style="max-height: 200px;">
+
       <div class="pattern">
         <div class="container text-light">
           <br />
@@ -90,19 +90,21 @@ nav {
 }
 </style>
 <script>
-import MenuConfig from "@/assets/custom/Menu.json";
-import FooterConfig from "@/assets/custom/Footer.json";
-import ConnectEvm from "@/components/ConnectEvm.vue";
+  import MenuConfig from "@/assets/custom/Menu.json";
+  import FooterConfig from "@/assets/custom/Footer.json";
+  import ConnectEvm from "@/components/ConnectEvm.vue";
+  import router from "./router";
 
-export default {
-  components: {
-    ConnectEvm,
-  },
-  data() {
-    return {
-      Menu: MenuConfig.config,
-      Footer: FooterConfig.config,
-    };
-  },
-};
+  export default {
+    components: {
+      ConnectEvm
+    },
+    data() {
+      return { 
+        Menu: MenuConfig.config,
+        Footer: FooterConfig.config
+      }
+    }
+}
 </script>
+

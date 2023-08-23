@@ -1,4 +1,4 @@
-From node
+FROM node
 
 ENV NODE_ENV local
 RUN npm install -g http-server
@@ -21,3 +21,4 @@ COPY . .
 EXPOSE 8080
 ENTRYPOINT ["/bin/sh"]
 # "cp -prnv /custom/ /app/src/assets/custom/"
+
