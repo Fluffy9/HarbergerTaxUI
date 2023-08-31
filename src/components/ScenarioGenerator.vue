@@ -197,9 +197,9 @@ Higher turnover rates (demand) push Josh's SAV up.`
         <br />
         <h3 class="text-left">TLDR</h3>
         <p class="text-left">
-          To <b>maximise total welfare</b> governments should set the tax rate
+          To <b>maximise total welfare</b>, governments should set the tax rate
           below the turnover rate. This balances individual investment
-          incentives and allocatable efficiency.
+          incentives and allocative efficiency.
         </p>
       </b-col>
     </b-row>
