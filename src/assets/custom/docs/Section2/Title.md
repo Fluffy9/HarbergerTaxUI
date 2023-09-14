@@ -1,1 +1,1 @@
-# Private Ownership and It's Problems
+# Private Ownership and Its Problems
